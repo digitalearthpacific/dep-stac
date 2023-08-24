@@ -28,30 +28,28 @@ def download_items(
 
 
 def write_items_to_file(items: list, out_file: str, collection_override: str = None) -> int:
-    count = 0
     all_items = []
-    with open(out_file + "l", "w") as f:
-        for item_bytes in items:
-            count += 1
-            item = json.loads(item_bytes)
-            if collection_override is not None:
-                stac_item = Item.from_dict(item)
-                stac_item.collection_id = collection_override
-                stac_item.add_link(
-                    pystac.Link(
-                        pystac.RelType.COLLECTION,
-                        collection_override,
-                        media_type=pystac.MediaType.JSON,
-                    )
-                )
-                item = stac_item.to_dict()
 
-            all_items.append(item)
-            f.write(json.dumps(item))
-            f.write('\n')
+    for item_bytes in items:
+        item = json.loads(item_bytes)
+        if collection_override is not None:
+            stac_item = Item.from_dict(item)
+            stac_item.collection_id = collection_override
+            stac_item.add_link(
+                pystac.Link(
+                    pystac.RelType.COLLECTION,
+                    collection_override,
+                    media_type=pystac.MediaType.JSON,
+                )
+            )
+            item = stac_item.to_dict()
+
+        all_items.append(item)
+
     with open(out_file, "w") as f:
         f.write(json.dumps(all_items))
-    return count
+
+    return len(all_items)
 
 
 def list_stac_documents(
