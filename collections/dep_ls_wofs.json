@@ -1,0 +1,101 @@
+{
+  "type": "Collection",
+  "id": "dep_ls_wofs",
+  "stac_version": "1.0.0",
+  "description": "WOfS Annual Summary over the Pacific.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "https://stac.staging.auspatious.com/collections/dep_ls_wofs",
+      "type": "application/json",
+      "title": "WOfS Landsat Annual Summary "
+    },
+    {
+      "rel": "self",
+      "href": "https://stac.staging.auspatious.com/collections/dep_ls_wofs",
+      "type": "application/json"
+    }
+  ],
+  "title": "WOfS Landsat Annual Summary ",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180,
+          -90,
+          180,
+          90
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "1980-01-01T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "Landsat",
+    "WOfS",
+    "Water",
+    "Pacific"
+  ],
+  "providers": [
+    {
+      "name": "Digital Earth Pacific",
+      "roles": [
+        "processor",
+        "host"
+      ],
+      "url": "https://digitalearthpacific.org"
+    },
+    {
+      "name": "Microsoft",
+      "roles": [
+        "host"
+      ],
+      "url": "https://microsoft.com"
+    },
+    {
+      "name": "USGS",
+      "roles": [
+        "producer",
+        "processor",
+        "licensor"
+      ],
+      "url": "https://www.usgs.gov/landsat-missions/landsat-collection-2-level-2-science-products"
+    },
+    {
+      "name": "NASA",
+      "roles": [
+        "licensor"
+      ],
+      "url": "https://www.nasa.gov/"
+    }
+  ],
+  "summaries": {
+    "gsd": [
+      30
+    ],
+    "eo:bands": [
+      {
+        "name": "mean",
+        "common_name": "water",
+        "description": "Mean annual water summary",
+        "min": 0,
+        "max": 100,
+        "nodata": -32767
+      }
+    ],
+    "platform": [
+      "landsat-5",
+      "landsat-7",
+      "landsat-8",
+      "landsat-9"
+    ]
+  }
+}
