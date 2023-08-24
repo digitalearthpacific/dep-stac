@@ -29,7 +29,8 @@ def download_items(
 
 def write_items_to_file(items: list, out_file: str, collection_override: str = None) -> int:
     count = 0
-    with open(out_file, "w") as f:
+    all_items = []
+    with open(out_file + "l", "w") as f:
         for item_bytes in items:
             count += 1
             item = json.loads(item_bytes)
@@ -45,8 +46,11 @@ def write_items_to_file(items: list, out_file: str, collection_override: str = N
                 )
                 item = stac_item.to_dict()
 
+            all_items.append(item)
             f.write(json.dumps(item))
-            f.write("\n")
+            f.write('\n')
+    with open(out_file, "w") as f:
+        f.write(json.dumps(all_items))
     return count
 
 
