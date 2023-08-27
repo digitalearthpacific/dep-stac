@@ -5,10 +5,11 @@ from functools import partial
 from multiprocessing.dummy import Pool as ThreadPool
 
 import click
+import pystac
 from azure.storage.blob import ContainerClient
 from dep_tools.utils import get_container_client
-
-import pystac
+from pypgstac.db import PgstacDB
+from pypgstac.load import Loader, Methods
 from pystac import Item
 
 
@@ -27,7 +28,7 @@ def download_items(
     return stac_items
 
 
-def write_items_to_file(items: list, out_file: str, collection_override: str = None) -> int:
+def insert_items(items: list, out_file: str, collection_override: str = None) -> int:
     all_items = []
 
     for item_bytes in items:
@@ -46,15 +47,15 @@ def write_items_to_file(items: list, out_file: str, collection_override: str = N
 
         all_items.append(item)
 
-    with open(out_file, "w") as f:
-        f.write(json.dumps(all_items))
+    method = Methods.upsert
+    db = PgstacDB()
+    loader = Loader(db)
+    loader.load_items(all_items, insert_mode=method)
 
     return len(all_items)
 
 
-def list_stac_documents(
-    container_client: ContainerClient, prefix: str
-) -> list:
+def list_stac_documents(container_client: ContainerClient, prefix: str) -> list:
     for blob_record in container_client.list_blobs(name_starts_with=prefix):
         blob_name = blob_record["name"]
         if blob_name.endswith(".stac-item.json"):
@@ -65,17 +66,16 @@ def list_stac_documents(
 @click.option("--storage-container", help="Storage container")
 @click.option("--prefix", help="Prefix")
 @click.option(
-    "--out-file", help="Output file", type=click.Path()
-)
-@click.option(
     "--collection-override", help="Change the collection name", type=click.Path()
 )
-def get_items_for_product(storage_container: str, prefix: str, out_file: str, collection_override: str):
+def get_items_for_product(
+    storage_container: str, prefix: str, out_file: str, collection_override: str
+):
     container_client = get_container_client(container_name=storage_container)
     stac_urls = list_stac_documents(container_client, prefix)
     items = download_items(container_client, stac_urls)
-    count = write_items_to_file(items, out_file, collection_override)
-    print(f"Found {count} items")
+    count = insert_items(items, out_file, collection_override)
+    print(f"Found and update {count} items in the database")
 
 
 if __name__ == "__main__":
