@@ -1,5 +1,8 @@
 # This makefile is for populating a local DB
 
+render_collections:
+	python3 create_collections.py
+
 insert_collections:
 	cd collections && \
 	ls | xargs -L 1 \

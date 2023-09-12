@@ -5,7 +5,7 @@ from pathlib import Path
 from dep_collections.dep_ls_wofs import dep_ls_wofs
 from dep_collections.dep_s2_mangroves import dep_s2_mangroves
 
-STAGING_URL = "https://stac.staging.auspatious.com"
+STAGING_URL = "https://stac.staging.digitalearthpacific.org"
 OUT_FOLDER = "collections"
 
 out_dir = Path(OUT_FOLDER)
