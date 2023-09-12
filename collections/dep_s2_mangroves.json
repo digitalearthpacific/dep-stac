@@ -1,0 +1,122 @@
+{
+  "type": "Collection",
+  "id": "dep_s2_mangroves",
+  "stac_version": "1.0.0",
+  "description": "Mangroves Extent over the Pacific.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "https://stac.staging.auspatious.com/collections/dep_s2_mangroves",
+      "type": "application/json",
+      "title": "Mangroves Extent"
+    },
+    {
+      "rel": "self",
+      "href": "https://stac.staging.auspatious.com/collections/dep_s2_mangroves",
+      "type": "application/json"
+    }
+  ],
+  "title": "Mangroves Extent",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          100,
+          -30,
+          260,
+          30
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2012-01-01T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "Landsat",
+    "Mangroves",
+    "GMW",
+    "Pacific"
+  ],
+  "providers": [
+    {
+      "name": "Digital Earth Pacific",
+      "roles": [
+        "processor",
+        "host"
+      ],
+      "url": "https://digitalearthpacific.org"
+    },
+    {
+      "name": "Microsoft",
+      "roles": [
+        "host"
+      ],
+      "url": "https://microsoft.com"
+    },
+    {
+      "name": "ESA",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://sentinel.esa.int/web/sentinel/missions/sentinel-2"
+    },
+    {
+      "name": "Esri",
+      "roles": [
+        "processor"
+      ],
+      "url": "https://www.esri.com/"
+    }
+  ],
+  "summaries": {
+    "gsd": [
+      10
+    ],
+    "eo:bands": [
+      {
+        "name": "closed",
+        "common_name": "closed",
+        "description": "Closed mangrove cover",
+        "min": 0,
+        "max": 10000,
+        "nodata": -32767
+      },
+      {
+        "name": "mangroves",
+        "common_name": "mangroves",
+        "description": "Mangrove cover",
+        "min": 0,
+        "max": 10000,
+        "nodata": -32767
+      },
+      {
+        "name": "ndvi",
+        "common_name": "ndvi",
+        "description": "Normalised difference vegetation index",
+        "min": -1,
+        "max": 1,
+        "nodata": -32767
+      },
+      {
+        "name": "regular",
+        "common_name": "regular",
+        "description": "Regular mangrove cover",
+        "min": 0,
+        "max": 1,
+        "nodata": -32767
+      }
+    ],
+    "platform": [
+      "Sentinel-2A",
+      "Sentinel-2B"
+    ]
+  }
+}
