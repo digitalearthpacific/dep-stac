@@ -44,19 +44,11 @@ dep_s2_mangroves = Collection(
             "gsd": [10],
             "eo:bands": [
                 {
-                    "name": "closed",
-                    "common_name": "closed",
-                    "description": "Closed mangrove cover",
-                    "min": 0,
-                    "max": 10000,
-                    "nodata": -32767,
-                },
-                {
                     "name": "mangroves",
                     "common_name": "mangroves",
                     "description": "Mangrove cover",
                     "min": 0,
-                    "max": 10000,
+                    "max": 2,
                     "nodata": -32767,
                 },
                 {
@@ -64,14 +56,6 @@ dep_s2_mangroves = Collection(
                     "common_name": "ndvi",
                     "description": "Normalised difference vegetation index",
                     "min": -1,
-                    "max": 1,
-                    "nodata": -32767,
-                },
-                {
-                    "name": "regular",
-                    "common_name": "regular",
-                    "description": "Regular mangrove cover",
-                    "min": 0,
                     "max": 1,
                     "nodata": -32767,
                 },
