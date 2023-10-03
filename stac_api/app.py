@@ -30,8 +30,8 @@ post_request_model = create_post_request_model(extensions, base_model=PgstacSear
 get_request_model = create_get_request_model(extensions)
 
 api = StacApi(
-    title="STAC API",
-    description="Alex's crazy STAC API",
+    title="Digital Earth Pacific STAC API",
+    description="A SpatioTemporal Asset Catalog (STAC) API for Digital Earth Pacific",
     extensions=[ContextExtension()],
     settings=settings,
     client=CoreCrudClient(post_request_model=post_request_model),

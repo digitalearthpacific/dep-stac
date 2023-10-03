@@ -27,3 +27,8 @@ WORKDIR /code
 
 # Don't use old pygeos
 ENV USE_PYGEOS=0
+
+ENV APP_HOST=0.0.0.0
+ENV APP_PORT=8000
+
+CMD uvicorn stac_api.app:app --host ${APP_HOST} --port ${APP_PORT} --log-level info
