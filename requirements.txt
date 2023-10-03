@@ -1,0 +1,11 @@
+pypgstac
+psycopg
+psycopg_pool
+orjson
+pystac
+uvicorn
+stac-fastapi.api
+stac-fastapi.types
+stac-fastapi.extensions
+stac_fastapi.pgstac
+pydantic~=1.10

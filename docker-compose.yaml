@@ -1,0 +1,28 @@
+services:
+  postgis:
+    image: postgis/postgis:13-3.4
+    restart: on-failure
+    environment:
+      POSTGRES_USER: username
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgis
+    ports:
+      - 5432:5432
+  stac:
+    build: .
+    environment:
+      APP_HOST: "0.0.0.0"
+      APP_PORT: 8000
+      POSTGRES_HOST_READER: postgis
+      POSTGRES_HOST_WRITER: postgis
+      POSTGRES_USER: username
+      POSTGRES_PASS: password
+      POSTGRES_DBNAME: postgis
+      POSTGRES_PORT: 5432
+      TITLE: "My amazing title"
+      DESCRIPTION: "What is this, a description?"
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/code
+    # command: uvicorn stac_api.app:app --reload --host 0.0.0.0 --port 8000
