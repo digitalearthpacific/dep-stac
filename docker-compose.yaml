@@ -10,17 +10,23 @@ services:
       - 5432:5432
   stac:
     build: .
+    depends_on: 
+      - postgis
     environment:
       APP_HOST: "0.0.0.0"
       APP_PORT: 8000
+      # For the app
       POSTGRES_HOST_READER: postgis
       POSTGRES_HOST_WRITER: postgis
       POSTGRES_USER: username
       POSTGRES_PASS: password
       POSTGRES_DBNAME: postgis
       POSTGRES_PORT: 5432
-      TITLE: "My amazing title"
-      DESCRIPTION: "What is this, a description?"
+      # For pypgstac
+      PGUSER: username
+      PGPASSWORD: password
+      PGDATABASE: postgis
+      PGHOST: postgis
     ports:
       - 8000:8000
     volumes:
