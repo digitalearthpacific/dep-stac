@@ -49,3 +49,5 @@ websockets
 # Needed for pypgstac
 psycopg
 psycopg_pool
+# Needed for our tools
+git+https://github.com/digitalearthpacific/dep-tools.git@a61e09a
