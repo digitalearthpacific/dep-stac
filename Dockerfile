@@ -1,10 +1,11 @@
 FROM ghcr.io/osgeo/gdal:ubuntu-full-3.7.1
 
 RUN apt-get update && apt-get install -y \
-    # Python tools
+    # Python  and build tools
     python3-pip \
     python3-dev \
     build-essential \
+    gcc \
     # User tools
     git \
     fish \
