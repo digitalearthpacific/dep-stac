@@ -14,8 +14,8 @@ dep_ls_geomad_extent = Extent(
     TemporalExtent([[datetime(1980, 1, 1, 0, 0, 0, 0, timezone.utc), None]]),
 )
 
-LS_BANDS = ['red', 'green', 'blue', 'nir08', 'swir16', 'swir22']
-MAD_BANDS = [('emad', 'Euclidean'), ('smad', 'Spectral'), ('bcmad', "Bray-curtis")]
+LS_BANDS = ["red", "green", "blue", "nir08", "swir16", "swir22"]
+MAD_BANDS = [("emad", "Euclidean"), ("smad", "Spectral"), ("bcmad", "Bray-curtis")]
 
 # Create a Collection
 dep_ls_geomad = Collection(
@@ -54,7 +54,8 @@ dep_ls_geomad = Collection(
                     min=0,
                     max=10_000,
                     nodata=0,
-                ) for band in LS_BANDS
+                )
+                for band in LS_BANDS
             ] + [
                 dict(
                     name=band[0],
@@ -63,19 +64,18 @@ dep_ls_geomad = Collection(
                     min=0,
                     max=10_000,
                     nodata=0,
-                ) for band in MAD_BANDS
-            ] +
-            [
+                )
+                for band in MAD_BANDS
+            ] + [
                 dict(
                     name="count",
                     common_name="Count clear",
                     description="Count of clear observations",
                     min=0,
-                    max=10_000,
+                    max=250,
                     nodata=0,
                 )
-            ]
-            ,
+            ],
             "platform": ["landsat-5", "landsat-7", "landsat-8", "landsat-9"],
         },
     ),
