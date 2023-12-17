@@ -2,6 +2,7 @@
 
 from pathlib import Path
 
+from dep_collections.dep_ls_geomad import dep_ls_geomad
 from dep_collections.dep_ls_wofs import dep_ls_wofs
 from dep_collections.dep_s2_mangroves import dep_s2_mangroves
 
@@ -11,7 +12,11 @@ OUT_FOLDER = "collections"
 out_dir = Path(OUT_FOLDER)
 out_dir.mkdir(exist_ok=True)
 
-all_collections = (dep_ls_wofs, dep_s2_mangroves)
+all_collections = (
+    dep_ls_wofs,
+    dep_ls_geomad,
+    dep_s2_mangroves,
+)
 
 for collection in all_collections:
     collection_url = f"{STAGING_URL}/collections/{collection.id}"
