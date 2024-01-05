@@ -8,7 +8,7 @@
       "rel": "root",
       "href": "https://stac.staging.digitalearthpacific.org/collections/dep_s2_geomad",
       "type": "application/json",
-      "title": "Landsat GeoMAD"
+      "title": "Sentinel-2 GeoMAD"
     },
     {
       "rel": "self",
@@ -16,7 +16,7 @@
       "type": "application/json"
     }
   ],
-  "title": "Landsat GeoMAD",
+  "title": "Sentinel-2 GeoMAD",
   "extent": {
     "spatial": {
       "bbox": [
