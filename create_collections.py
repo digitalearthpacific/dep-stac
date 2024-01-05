@@ -4,6 +4,7 @@ from pathlib import Path
 
 from dep_collections.dep_ls_geomad import dep_ls_geomad
 from dep_collections.dep_ls_wofs import dep_ls_wofs
+from dep_collections.dep_s2_geomad import dep_s2_geomad
 from dep_collections.dep_s2_mangroves import dep_s2_mangroves
 
 STAGING_URL = "https://stac.staging.digitalearthpacific.org"
@@ -15,6 +16,7 @@ out_dir.mkdir(exist_ok=True)
 all_collections = (
     dep_ls_wofs,
     dep_ls_geomad,
+    dep_s2_geomad,
     dep_s2_mangroves,
 )
 

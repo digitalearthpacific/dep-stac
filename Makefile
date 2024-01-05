@@ -6,6 +6,9 @@ up:
 shell:
 	docker-compose exec -it stac fish
 
+create_collections:
+	python3 create_collections.py
+
 migrate:
 	docker-compose exec stac \
 		pypgstac migrate

@@ -158,7 +158,7 @@
         "common_name": "Count clear",
         "description": "Count of clear observations",
         "min": 0,
-        "max": 10000,
+        "max": 250,
         "nodata": 0
       }
     ],
