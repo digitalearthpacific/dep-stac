@@ -1,0 +1,201 @@
+{
+  "type": "Collection",
+  "id": "dep_s2_geomad",
+  "stac_version": "1.0.0",
+  "description": "Sentinel-2 Geometric Median and Absolute Deviations (GeoMAD) over the Pacific.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "https://stac.staging.digitalearthpacific.org/collections/dep_s2_geomad",
+      "type": "application/json",
+      "title": "Landsat GeoMAD"
+    },
+    {
+      "rel": "self",
+      "href": "https://stac.staging.digitalearthpacific.org/collections/dep_s2_geomad",
+      "type": "application/json"
+    }
+  ],
+  "title": "Landsat GeoMAD",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180,
+          -90,
+          180,
+          90
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2017-01-01T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "Sentinel-2",
+    "GeoMAD",
+    "Pacific"
+  ],
+  "providers": [
+    {
+      "name": "Digital Earth Pacific",
+      "roles": [
+        "processor",
+        "host"
+      ],
+      "url": "https://digitalearthpacific.org"
+    },
+    {
+      "name": "Microsoft",
+      "roles": [
+        "host"
+      ],
+      "url": "https://microsoft.com"
+    },
+    {
+      "name": "ESA",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://sentinel.esa.int/web/sentinel/missions/sentinel-2"
+    },
+    {
+      "name": "Esri",
+      "roles": [
+        "processor"
+      ],
+      "url": "https://www.esri.com/"
+    }
+  ],
+  "summaries": {
+    "gsd": [
+      10
+    ],
+    "eo:bands": [
+      {
+        "name": "B02",
+        "common_name": "B02",
+        "description": "Median for B02 band",
+        "min": 0,
+        "max": 10000,
+        "nodata": 0
+      },
+      {
+        "name": "B03",
+        "common_name": "B03",
+        "description": "Median for B03 band",
+        "min": 0,
+        "max": 10000,
+        "nodata": 0
+      },
+      {
+        "name": "B04",
+        "common_name": "B04",
+        "description": "Median for B04 band",
+        "min": 0,
+        "max": 10000,
+        "nodata": 0
+      },
+      {
+        "name": "B05",
+        "common_name": "B05",
+        "description": "Median for B05 band",
+        "min": 0,
+        "max": 10000,
+        "nodata": 0
+      },
+      {
+        "name": "B06",
+        "common_name": "B06",
+        "description": "Median for B06 band",
+        "min": 0,
+        "max": 10000,
+        "nodata": 0
+      },
+      {
+        "name": "B07",
+        "common_name": "B07",
+        "description": "Median for B07 band",
+        "min": 0,
+        "max": 10000,
+        "nodata": 0
+      },
+      {
+        "name": "B08",
+        "common_name": "B08",
+        "description": "Median for B08 band",
+        "min": 0,
+        "max": 10000,
+        "nodata": 0
+      },
+      {
+        "name": "B8A",
+        "common_name": "B8A",
+        "description": "Median for B8A band",
+        "min": 0,
+        "max": 10000,
+        "nodata": 0
+      },
+      {
+        "name": "B11",
+        "common_name": "B11",
+        "description": "Median for B11 band",
+        "min": 0,
+        "max": 10000,
+        "nodata": 0
+      },
+      {
+        "name": "B12",
+        "common_name": "B12",
+        "description": "Median for B12 band",
+        "min": 0,
+        "max": 10000,
+        "nodata": 0
+      },
+      {
+        "name": "emad",
+        "common_name": "Euclidean MAD",
+        "description": "Euclidean median absolute deviations across all bands",
+        "min": 0,
+        "max": 10000,
+        "nodata": 0
+      },
+      {
+        "name": "smad",
+        "common_name": "Spectral MAD",
+        "description": "Spectral median absolute deviations across all bands",
+        "min": 0,
+        "max": 10000,
+        "nodata": 0
+      },
+      {
+        "name": "bcmad",
+        "common_name": "Bray-curtis MAD",
+        "description": "Bray-curtis median absolute deviations across all bands",
+        "min": 0,
+        "max": 10000,
+        "nodata": 0
+      },
+      {
+        "name": "count",
+        "common_name": "Count clear",
+        "description": "Count of clear observations",
+        "min": 0,
+        "max": 250,
+        "nodata": 0
+      }
+    ],
+    "platform": [
+      "Sentinel-2A",
+      "Sentinel-2B"
+    ]
+  }
+}
