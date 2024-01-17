@@ -4,6 +4,7 @@ from pathlib import Path
 
 from dep_collections.dep_ls_geomad import dep_ls_geomad
 from dep_collections.dep_ls_wofs import dep_ls_wofs
+from dep_collections.dep_s1_mosaic import dep_s1_mosaic
 from dep_collections.dep_s2_geomad import dep_s2_geomad
 from dep_collections.dep_s2_mangroves import dep_s2_mangroves
 
@@ -18,6 +19,7 @@ all_collections = (
     dep_ls_geomad,
     dep_s2_geomad,
     dep_s2_mangroves,
+    dep_s1_mosaic,
 )
 
 for collection in all_collections:
