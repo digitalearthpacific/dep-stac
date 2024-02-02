@@ -14,13 +14,20 @@ dep_s1_mosaic_extent = Extent(
     TemporalExtent([[datetime(1980, 1, 1, 0, 0, 0, 0, timezone.utc), None]]),
 )
 
-BANDS = ["vh", "vv", "vv_vh"]
+BANDS = ["vh", "vv"]
 S1_MOSAIC_BANDS = []
 
 for band in BANDS:
     S1_MOSAIC_BANDS.append((f"mean_{band}", f"{band} Annual Mean"))
     S1_MOSAIC_BANDS.append((f"median_{band}", f"{band} Annual Median"))
     S1_MOSAIC_BANDS.append((f"std_{band}", f"{band} Annual Standard Deviation"))
+
+S1_MOSAIC_BANDS.append(
+    (
+        "count",
+        "Observation Count",
+    )
+)
 
 # Create a Collection
 dep_s1_mosaic = Collection(

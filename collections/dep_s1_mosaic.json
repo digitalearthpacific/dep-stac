@@ -121,25 +121,9 @@
         "nodata": -32767
       },
       {
-        "name": "mean_vv_vh",
-        "common_name": "vv_vh Annual Mean",
-        "description": "vv_vh Annual Mean",
-        "min": 0,
-        "max": 100,
-        "nodata": -32767
-      },
-      {
-        "name": "median_vv_vh",
-        "common_name": "vv_vh Annual Median",
-        "description": "vv_vh Annual Median",
-        "min": 0,
-        "max": 100,
-        "nodata": -32767
-      },
-      {
-        "name": "std_vv_vh",
-        "common_name": "vv_vh Annual Standard Deviation",
-        "description": "vv_vh Annual Standard Deviation",
+        "name": "count",
+        "common_name": "Observation Count",
+        "description": "Observation Count",
         "min": 0,
         "max": 100,
         "nodata": -32767
