@@ -7,6 +7,7 @@ from dep_collections.dep_ls_wofs import dep_ls_wofs
 from dep_collections.dep_s1_mosaic import dep_s1_mosaic
 from dep_collections.dep_s2_geomad import dep_s2_geomad
 from dep_collections.dep_s2_mangroves import dep_s2_mangroves
+from dep_collections.dep_s2s1_mrd import dep_s2s1_mrd
 
 STAGING_URL = "https://stac.staging.digitalearthpacific.org"
 OUT_FOLDER = "collections"
@@ -20,6 +21,7 @@ all_collections = (
     dep_s2_geomad,
     dep_s2_mangroves,
     dep_s1_mosaic,
+    dep_s2s1_mrd
 )
 
 for collection in all_collections:
