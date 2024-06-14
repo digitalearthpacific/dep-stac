@@ -2,25 +2,29 @@
 
 import json
 from multiprocessing.dummy import Pool as ThreadPool
-from typing import Iterable
+from types import SimpleNamespace
+from typing import Generator, Iterable
 
 import click
 import pystac
-from dep_tools.azure import list_blob_container
-from dep_tools.utils import get_container_client
+
+from odc.aws import s3_find
+
+from odc.aws import s3_fetch
 from pypgstac.db import PgstacDB
 from pypgstac.load import Loader, Methods
 from pystac import Item
 
 
-def download_blob_item(blob: str):
-    url = f"https://deppcpublicstorage.blob.core.windows.net/output/{blob}"
-    return Item.from_file(url)
+def download_item(item: SimpleNamespace):
+    url = item.url
+    item_bin = s3_fetch(url)
+    return Item.from_dict(json.loads(item_bin))
 
 
-def download_blob_items(stac_urls: list[str]) -> Iterable[Item]:
+def download_items(s3_files: Generator) -> Iterable[Item]:
     pool = ThreadPool(20)
-    items = pool.map(download_blob_item, stac_urls)
+    items = pool.map(download_item, s3_files)
     pool.close()
     pool.join()
 
@@ -59,8 +63,8 @@ def insert_items(
 
 
 @click.command()
-@click.option("--storage-container", help="Storage container")
-@click.option("--prefix", help="Prefix")
+@click.option("--bucket", help="S3 Bucket")
+@click.option("--prefix", help="Prefix", default=None)
 @click.option(
     "--dump-items", help="Dump items to a file", type=bool, default=False, is_flag=True
 )
@@ -68,11 +72,10 @@ def insert_items(
     "--collection-override", help="Change the collection name", type=str, default=None
 )
 def get_insert_items(
-    storage_container: str, prefix: str, dump_items: bool, collection_override: str
+    bucket: str, prefix: str | None, dump_items: bool, collection_override: str
 ):
-    container_client = get_container_client(container_name=storage_container)
-    stac_urls = list_blob_container(container_client, prefix, suffix=".stac-item.json")
-    items = download_blob_items(stac_urls)
+    s3_files = s3_find(f"s3://{bucket}/{prefix}", glob="**/*.stac-item.json")
+    items = download_items(s3_files)
     count = insert_items(items, collection_override, dump_items=dump_items)
     print(f"Found and updated {count} items in the database")
 
