@@ -1,4 +1,4 @@
-FROM ghcr.io/osgeo/gdal:ubuntu-full-3.9.1
+FROM ghcr.io/osgeo/gdal:ubuntu-full-3.8.5
 
 RUN apt-get update && apt-get install -y \
     # Python  and build tools
