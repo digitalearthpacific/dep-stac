@@ -9,6 +9,10 @@ shell:
 create_collections:
 	python3 create_collections.py
 
+init:
+	docker-compose exec stac \
+		pypgstac migrate
+
 migrate:
 	docker-compose exec stac \
 		pypgstac migrate

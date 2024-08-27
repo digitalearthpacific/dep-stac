@@ -1,4 +1,4 @@
 # DEP STAC
 
-This repo contains configurations and a Docker image for our
-STAC apps and metadata.
+This repo contains configurations for a container to manage
+our STAC documents.

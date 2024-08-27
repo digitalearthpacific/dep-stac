@@ -14,17 +14,18 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     # Certificates for some reason
     ca-certificates \
+    # hdf5
+    libhdf5-dev \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/{apt,dpkg,cache,log}
 
-ADD requirements.txt /tmp/requirements.txt
-
-RUN pip3 install -r /tmp/requirements.txt
+RUN pip install --upgrade pip setuptools
 
 ADD . /code
-
 WORKDIR /code
+
+RUN pip install -r requirements.txt
 
 # Don't use old pygeos
 ENV USE_PYGEOS=0
@@ -32,4 +33,5 @@ ENV USE_PYGEOS=0
 ENV APP_HOST=0.0.0.0
 ENV APP_PORT=8000
 
+# uvicorn stac_api.app:app --host ${APP_HOST} --port ${APP_PORT} --log-level info
 CMD uvicorn stac_api.app:app --host ${APP_HOST} --port ${APP_PORT} --log-level info

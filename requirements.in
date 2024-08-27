@@ -17,11 +17,11 @@ iso8601
 lark
 orjson
 plpygis
-pydantic
+pydantic==2.4.2
 pygeofilter
 pygeoif
-pypgstac==0.8.1
-pystac
+pypgstac
+pystac[validation]
 python-dateutil
 python-dotenv
 pytz
@@ -35,7 +35,7 @@ stac-fastapi.api
 stac-fastapi.extensions
 stac-fastapi.pgstac
 stac-fastapi.types
-stac-pydantic
+stac-pydantic==3.1.2
 starlette
 tenacity
 termcolor
@@ -49,7 +49,3 @@ websockets
 # Needed for pypgstac
 psycopg
 psycopg_pool
-# Needed for our tools
-git+https://github.com/digitalearthpacific/dep-tools.git
-# Needed for odc stuff
-odc-apps-dc-tools

@@ -9,8 +9,8 @@ services:
     ports:
       - 5432:5432
   stac:
-    build: .
-    depends_on: 
+    image: ghcr.io/stac-utils/stac-fastapi-pgstac:3.0.0
+    depends_on:
       - postgis
     environment:
       APP_HOST: "0.0.0.0"
@@ -29,6 +29,6 @@ services:
       PGHOST: postgis
     ports:
       - 8000:8000
-    volumes:
-      - .:/code
-    # command: uvicorn stac_api.app:app --reload --host 0.0.0.0 --port 8000
+    # volumes:
+    #   - .:/code
+    command: uvicorn stac_fastapi.pgstac.app:app --host 0.0.0.0 --port 8000
