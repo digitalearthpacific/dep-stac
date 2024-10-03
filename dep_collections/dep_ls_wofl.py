@@ -30,7 +30,7 @@ dep_ls_wofl = Collection(
         Provider(
             name="Amazon",
             roles=["host"],
-            url="https://amazon.com",
+            url="https://aws.amazon.com/",
         ),
         Provider(
             name="USGS",
