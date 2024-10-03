@@ -8,19 +8,19 @@ from pystac import (
 )
 from datetime import datetime, timezone
 
-dep_ls_wofl_extent = Extent(
+dep_ls_wofs_extent = Extent(
     SpatialExtent([[-180, -90, 180, 90]]),
     TemporalExtent([[datetime(1980, 1, 1, 0, 0, 0, 0, timezone.utc), None]]),
 )
 
 # Create a Collection
 dep_ls_wofs = Collection(
-    id="dep_ls_wofl",
-    description="Water observations from space (WOfS) feature layers",
-    title="WOfS feature layer",
-    extent=dep_ls_wofl_extent,
+    id="dep_ls_wofs",
+    description="WOfS Annual Summary over the Pacific.",
+    title="WOfS Landsat Annual Summary ",
+    extent=dep_ls_wofs_extent,
     license="CC-BY-4.0",
-    keywords=["Landsat", "WOfS", "WOFL", "Water", "Pacific"],
+    keywords=["Landsat", "WOfS", "Water", "Pacific"],
     providers=[
         Provider(
             name="Digital Earth Pacific",
@@ -28,9 +28,9 @@ dep_ls_wofs = Collection(
             url="https://digitalearthpacific.org",
         ),
         Provider(
-            name="Amazon",
+            name="Microsoft",
             roles=["host"],
-            url="https://amazon.com",
+            url="https://microsoft.com",
         ),
         Provider(
             name="USGS",
@@ -44,9 +44,9 @@ dep_ls_wofs = Collection(
             "gsd": [30],
             "eo:bands": [
                 {
-                    "name": "water",
+                    "name": "mean",
                     "common_name": "water",
-                    "description": "Water feature layer for a single date and time",
+                    "description": "Mean annual water summary",
                     "min": 0,
                     "max": 100,
                     "nodata": -32767,
