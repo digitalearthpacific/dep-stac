@@ -1,0 +1,102 @@
+{
+  "type": "Collection",
+  "id": "dep_ls_wofl",
+  "stac_version": "1.0.0",
+  "description": "Water observations from space (WOfS) feature layers",
+  "links": [
+    {
+      "rel": "root",
+      "href": "https://stac.staging.digitalearthpacific.org/collections/dep_ls_wofl",
+      "type": "application/json",
+      "title": "WOfS feature layer"
+    },
+    {
+      "rel": "self",
+      "href": "https://stac.staging.digitalearthpacific.org/collections/dep_ls_wofl",
+      "type": "application/json"
+    }
+  ],
+  "title": "WOfS feature layer",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180,
+          -90,
+          180,
+          90
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "1980-01-01T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "Landsat",
+    "WOfS",
+    "WOFL",
+    "Water",
+    "Pacific"
+  ],
+  "providers": [
+    {
+      "name": "Digital Earth Pacific",
+      "roles": [
+        "processor",
+        "host"
+      ],
+      "url": "https://digitalearthpacific.org"
+    },
+    {
+      "name": "Amazon",
+      "roles": [
+        "host"
+      ],
+      "url": "https://amazon.com"
+    },
+    {
+      "name": "USGS",
+      "roles": [
+        "producer",
+        "processor",
+        "licensor"
+      ],
+      "url": "https://www.usgs.gov/landsat-missions/landsat-collection-2-level-2-science-products"
+    },
+    {
+      "name": "NASA",
+      "roles": [
+        "licensor"
+      ],
+      "url": "https://www.nasa.gov/"
+    }
+  ],
+  "summaries": {
+    "gsd": [
+      30
+    ],
+    "eo:bands": [
+      {
+        "name": "water",
+        "common_name": "water",
+        "description": "Water feature layer for a single date and time",
+        "min": 0,
+        "max": 256,
+        "nodata": 1
+      }
+    ],
+    "platform": [
+      "landsat-5",
+      "landsat-7",
+      "landsat-8",
+      "landsat-9"
+    ]
+  }
+}

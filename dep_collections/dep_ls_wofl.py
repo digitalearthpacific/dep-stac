@@ -14,7 +14,7 @@ dep_ls_wofl_extent = Extent(
 )
 
 # Create a Collection
-dep_ls_wofs = Collection(
+dep_ls_wofl = Collection(
     id="dep_ls_wofl",
     description="Water observations from space (WOfS) feature layers",
     title="WOfS feature layer",
@@ -48,8 +48,8 @@ dep_ls_wofs = Collection(
                     "common_name": "water",
                     "description": "Water feature layer for a single date and time",
                     "min": 0,
-                    "max": 100,
-                    "nodata": -32767,
+                    "max": 256,
+                    "nodata": 1,
                 },
             ],
             "platform": ["landsat-5", "landsat-7", "landsat-8", "landsat-9"],
