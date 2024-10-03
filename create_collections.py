@@ -4,6 +4,7 @@ from pathlib import Path
 
 from dep_collections.dep_ls_geomad import dep_ls_geomad
 from dep_collections.dep_ls_wofs import dep_ls_wofs
+from dep_collections.dep_ls_wofl import dep_ls_wofl
 from dep_collections.dep_s1_mosaic import dep_s1_mosaic
 from dep_collections.dep_s2_geomad import dep_s2_geomad
 from dep_collections.dep_s2_mangroves import dep_s2_mangroves
@@ -17,11 +18,12 @@ out_dir.mkdir(exist_ok=True)
 
 all_collections = (
     dep_ls_wofs,
+    dep_ls_wofl,
     dep_ls_geomad,
     dep_s2_geomad,
     dep_s2_mangroves,
     dep_s1_mosaic,
-    dep_s2s1_mrd
+    dep_s2s1_mrd,
 )
 
 for collection in all_collections:
@@ -30,4 +32,6 @@ for collection in all_collections:
     collection.set_self_href(collection_url)
 
     print(f"Writing {collection.id} to {out_dir}")
-    collection_dict = collection.save_object(dest_href=out_dir / f"{collection.id}.json")
+    collection_dict = collection.save_object(
+        dest_href=out_dir / f"{collection.id}.json"
+    )
