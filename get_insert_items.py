@@ -1,32 +1,23 @@
 #!/usr/bin/env python3
 
+import concurrent.futures
 import json
-from multiprocessing.dummy import Pool as ThreadPool
-from types import SimpleNamespace
 from typing import Generator, Iterable
 
 import click
 import pystac
-
-from odc.aws import s3_find
-
-from odc.aws import s3_fetch
+import s3fs
 from pypgstac.db import PgstacDB
 from pypgstac.load import Loader, Methods
 from pystac import Item
 
 
-def download_item(item: SimpleNamespace):
-    url = item.url
-    item_bin = s3_fetch(url)
-    return Item.from_dict(json.loads(item_bin))
+def download_items(s3: s3fs.S3FileSystem, s3_files: Generator) -> Iterable[Item]:
+    def fetch_item(s3_file):
+        return Item.from_dict(json.loads(s3.read_text(s3_file)))
 
-
-def download_items(s3_files: Generator) -> Iterable[Item]:
-    pool = ThreadPool(20)
-    items = pool.map(download_item, s3_files)
-    pool.close()
-    pool.join()
+    with concurrent.futures.ThreadPoolExecutor(max_workers=20) as executor:
+        items = list(executor.map(fetch_item, s3_files))
 
     return items
 
@@ -46,7 +37,6 @@ def insert_items(
                     media_type=pystac.MediaType.JSON,
                 )
             )
-            item = item.to_dict()
 
         all_items.append(item.to_dict())
 
@@ -74,8 +64,10 @@ def insert_items(
 def get_insert_items(
     bucket: str, prefix: str | None, dump_items: bool, collection_override: str
 ):
-    s3_files = s3_find(f"s3://{bucket}/{prefix}", glob="**/*.stac-item.json")
-    items = download_items(s3_files)
+    s3 = s3fs.S3FileSystem(anon=False)
+    s3_files = s3.glob(f"s3://{bucket}/{prefix}/**/*.stac-item.json")
+
+    items = download_items(s3, s3_files)
     count = insert_items(items, collection_override, dump_items=dump_items)
     print(f"Found and updated {count} items in the database")
 
