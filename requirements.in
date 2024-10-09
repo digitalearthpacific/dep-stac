@@ -28,6 +28,7 @@ pytz
 pytz-deprecation-shim
 PyYAML
 regex
+s3fs
 six
 smart-open
 sniffio
