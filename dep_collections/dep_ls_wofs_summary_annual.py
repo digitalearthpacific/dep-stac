@@ -14,8 +14,8 @@ dep_ls_wofs_extent = Extent(
 )
 
 # Create a Collection
-dep_ls_wofs = Collection(
-    id="dep_ls_wofs",
+dep_ls_wofs_summary_annual = Collection(
+    id="dep_ls_wofs_summary_annual",
     description="WOfS Annual Summary over the Pacific.",
     title="WOfS Landsat Annual Summary ",
     extent=dep_ls_wofs_extent,
@@ -26,11 +26,6 @@ dep_ls_wofs = Collection(
             name="Digital Earth Pacific",
             roles=["processor", "host"],
             url="https://digitalearthpacific.org",
-        ),
-        Provider(
-            name="Microsoft",
-            roles=["host"],
-            url="https://microsoft.com",
         ),
         Provider(
             name="USGS",
