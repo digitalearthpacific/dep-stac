@@ -3,7 +3,7 @@
 from pathlib import Path
 
 from dep_collections.dep_ls_geomad import dep_ls_geomad
-from dep_collections.dep_ls_wofs import dep_ls_wofs
+from dep_collections.dep_ls_wofs_summary_annual import dep_ls_wofs_summary_annual
 from dep_collections.dep_ls_wofl import dep_ls_wofl
 from dep_collections.dep_s1_mosaic import dep_s1_mosaic
 from dep_collections.dep_s2_geomad import dep_s2_geomad
@@ -17,7 +17,7 @@ out_dir = Path(OUT_FOLDER)
 out_dir.mkdir(exist_ok=True)
 
 all_collections = (
-    dep_ls_wofs,
+    dep_ls_wofs_summary_annual,
     dep_ls_wofl,
     dep_ls_geomad,
     dep_s2_geomad,
