@@ -6,13 +6,13 @@
   "links": [
     {
       "rel": "root",
-      "href": "https://stac.staging.digitalearthpacific.org/collections/dep_ls_wofl",
+      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_ls_wofl",
       "type": "application/json",
       "title": "WOfS feature layer"
     },
     {
       "rel": "self",
-      "href": "https://stac.staging.digitalearthpacific.org/collections/dep_ls_wofl",
+      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_ls_wofl",
       "type": "application/json"
     }
   ],

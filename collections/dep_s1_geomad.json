@@ -1,22 +1,22 @@
 {
   "type": "Collection",
-  "id": "dep_s2_geomad",
+  "id": "dep_s1_geomad",
   "stac_version": "1.0.0",
-  "description": "Sentinel-2 Geometric Median and Absolute Deviations (GeoMAD) over the Pacific.",
+  "description": "Sentinel-1 mean and median annual geomad.",
   "links": [
     {
       "rel": "root",
-      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_s2_geomad",
+      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_s1_geomad",
       "type": "application/json",
-      "title": "Sentinel-2 GeoMAD"
+      "title": "Sentinel-1 Annual geomad"
     },
     {
       "rel": "self",
-      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_s2_geomad",
+      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_s1_geomad",
       "type": "application/json"
     }
   ],
-  "title": "Sentinel-2 GeoMAD",
+  "title": "Sentinel-1 Annual geomad",
   "extent": {
     "spatial": {
       "bbox": [
@@ -31,7 +31,7 @@
     "temporal": {
       "interval": [
         [
-          "2017-01-01T00:00:00Z",
+          "1980-01-01T00:00:00Z",
           null
         ]
       ]
@@ -39,8 +39,7 @@
   },
   "license": "CC-BY-4.0",
   "keywords": [
-    "Sentinel-2",
-    "GeoMAD",
+    "Sentinel-1",
     "Pacific"
   ],
   "providers": [
@@ -66,13 +65,6 @@
         "licensor"
       ],
       "url": "https://sentinel.esa.int/web/sentinel/missions/sentinel-2"
-    },
-    {
-      "name": "Esri",
-      "roles": [
-        "processor"
-      ],
-      "url": "https://www.esri.com/"
     }
   ],
   "summaries": {
@@ -85,7 +77,7 @@
         "common_name": "B02",
         "description": "Median for B02 band",
         "min": 0,
-        "max": 10000,
+        "max": 1,
         "nodata": 0
       },
       {
@@ -93,7 +85,7 @@
         "common_name": "B03",
         "description": "Median for B03 band",
         "min": 0,
-        "max": 10000,
+        "max": 1,
         "nodata": 0
       },
       {
@@ -101,7 +93,7 @@
         "common_name": "B04",
         "description": "Median for B04 band",
         "min": 0,
-        "max": 10000,
+        "max": 1,
         "nodata": 0
       },
       {
@@ -109,7 +101,7 @@
         "common_name": "B05",
         "description": "Median for B05 band",
         "min": 0,
-        "max": 10000,
+        "max": 1,
         "nodata": 0
       },
       {
@@ -117,7 +109,7 @@
         "common_name": "B06",
         "description": "Median for B06 band",
         "min": 0,
-        "max": 10000,
+        "max": 1,
         "nodata": 0
       },
       {
@@ -125,7 +117,7 @@
         "common_name": "B07",
         "description": "Median for B07 band",
         "min": 0,
-        "max": 10000,
+        "max": 1,
         "nodata": 0
       },
       {
@@ -133,7 +125,7 @@
         "common_name": "B08",
         "description": "Median for B08 band",
         "min": 0,
-        "max": 10000,
+        "max": 1,
         "nodata": 0
       },
       {
@@ -141,7 +133,7 @@
         "common_name": "B8A",
         "description": "Median for B8A band",
         "min": 0,
-        "max": 10000,
+        "max": 1,
         "nodata": 0
       },
       {
@@ -149,7 +141,7 @@
         "common_name": "B11",
         "description": "Median for B11 band",
         "min": 0,
-        "max": 10000,
+        "max": 1,
         "nodata": 0
       },
       {
@@ -157,7 +149,7 @@
         "common_name": "B12",
         "description": "Median for B12 band",
         "min": 0,
-        "max": 10000,
+        "max": 1,
         "nodata": 0
       },
       {
@@ -165,7 +157,7 @@
         "common_name": "Euclidean MAD",
         "description": "Euclidean median absolute deviations across all bands",
         "min": 0,
-        "max": 10000,
+        "max": 1,
         "nodata": 0
       },
       {
@@ -173,7 +165,7 @@
         "common_name": "Spectral MAD",
         "description": "Spectral median absolute deviations across all bands",
         "min": 0,
-        "max": 10000,
+        "max": 1,
         "nodata": 0
       },
       {
@@ -181,7 +173,7 @@
         "common_name": "Bray-Curtis MAD",
         "description": "Bray-Curtis median absolute deviations across all bands",
         "min": 0,
-        "max": 10000,
+        "max": 1,
         "nodata": 0
       },
       {
@@ -194,8 +186,8 @@
       }
     ],
     "platform": [
-      "Sentinel-2A",
-      "Sentinel-2B"
+      "Sentinel-1A",
+      "Sentinel-1B"
     ]
   }
 }

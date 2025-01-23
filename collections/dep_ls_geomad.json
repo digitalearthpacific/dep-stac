@@ -6,13 +6,13 @@
   "links": [
     {
       "rel": "root",
-      "href": "https://stac.staging.digitalearthpacific.org/collections/dep_ls_geomad",
+      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_ls_geomad",
       "type": "application/json",
       "title": "Landsat GeoMAD"
     },
     {
       "rel": "self",
-      "href": "https://stac.staging.digitalearthpacific.org/collections/dep_ls_geomad",
+      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_ls_geomad",
       "type": "application/json"
     }
   ],

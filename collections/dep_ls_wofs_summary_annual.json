@@ -6,13 +6,13 @@
   "links": [
     {
       "rel": "root",
-      "href": "https://stac.staging.digitalearthpacific.org/collections/dep_ls_wofs_summary_annual",
+      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_ls_wofs_summary_annual",
       "type": "application/json",
       "title": "WOfS Landsat Annual Summary "
     },
     {
       "rel": "self",
-      "href": "https://stac.staging.digitalearthpacific.org/collections/dep_ls_wofs_summary_annual",
+      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_ls_wofs_summary_annual",
       "type": "application/json"
     }
   ],

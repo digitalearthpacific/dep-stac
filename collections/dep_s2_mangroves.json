@@ -6,13 +6,13 @@
   "links": [
     {
       "rel": "root",
-      "href": "https://stac.staging.digitalearthpacific.org/collections/dep_s2_mangroves",
+      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_s2_mangroves",
       "type": "application/json",
       "title": "Mangroves Extent"
     },
     {
       "rel": "self",
-      "href": "https://stac.staging.digitalearthpacific.org/collections/dep_s2_mangroves",
+      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_s2_mangroves",
       "type": "application/json"
     }
   ],

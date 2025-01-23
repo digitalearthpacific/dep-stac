@@ -6,13 +6,13 @@
   "links": [
     {
       "rel": "root",
-      "href": "https://stac.staging.digitalearthpacific.org/collections/dep_s2s1_mrd",
+      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_s2s1_mrd",
       "type": "application/json",
       "title": "Mineral Resource Detection"
     },
     {
       "rel": "self",
-      "href": "https://stac.staging.digitalearthpacific.org/collections/dep_s2s1_mrd",
+      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_s2s1_mrd",
       "type": "application/json"
     }
   ],
