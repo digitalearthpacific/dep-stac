@@ -9,12 +9,12 @@ from pystac import (
     TemporalExtent,
 )
 
-dep_s2_geomad_extent = Extent(
+dep_s1_geomad_extent = Extent(
     SpatialExtent([[-180, -90, 180, 90]]),
-    TemporalExtent([[datetime(2017, 1, 1, 0, 0, 0, 0, timezone.utc), None]]),
+    TemporalExtent([[datetime(1980, 1, 1, 0, 0, 0, 0, timezone.utc), None]]),
 )
 
-S2_BANDS = [
+S1_BANDS = [
     "B02",
     "B03",
     "B04",
@@ -28,14 +28,15 @@ S2_BANDS = [
 ]
 MAD_BANDS = [("emad", "Euclidean"), ("smad", "Spectral"), ("bcmad", "Bray-Curtis")]
 
+
 # Create a Collection
-dep_s2_geomad = Collection(
-    id="dep_s2_geomad",
-    description="Sentinel-2 Geometric Median and Absolute Deviations (GeoMAD) over the Pacific.",
-    title="Sentinel-2 GeoMAD",
-    extent=dep_s2_geomad_extent,
+dep_s1_geomad = Collection(
+    id="dep_s1_geomad",
+    description="Sentinel-1 mean and median annual geomad.",
+    title="Sentinel-1 Annual geomad",
+    extent=dep_s1_geomad_extent,
     license="CC-BY-4.0",
-    keywords=["Sentinel-2", "GeoMAD", "Pacific"],
+    keywords=["Sentinel-1", "Pacific"],
     providers=[
         Provider(
             name="Digital Earth Pacific",
@@ -51,8 +52,7 @@ dep_s2_geomad = Collection(
             name="ESA",
             roles=["producer", "licensor"],
             url="https://sentinel.esa.int/web/sentinel/missions/sentinel-2",
-        ),
-        Provider(name="Esri", roles=["processor"], url="https://www.esri.com/"),
+        )
     ],
     summaries=Summaries(
         {
@@ -63,10 +63,10 @@ dep_s2_geomad = Collection(
                     common_name=band,
                     description=f"Median for {band} band",
                     min=0,
-                    max=10_000,
+                    max=1,
                     nodata=0,
                 )
-                for band in S2_BANDS
+                for band in S1_BANDS
             ]
             + [
                 dict(
@@ -74,7 +74,7 @@ dep_s2_geomad = Collection(
                     common_name=f"{band[1]} MAD",
                     description=f"{band[1]} median absolute deviations across all bands",
                     min=0,
-                    max=10_000,
+                    max=1,
                     nodata=0,
                 )
                 for band in MAD_BANDS
@@ -89,7 +89,7 @@ dep_s2_geomad = Collection(
                     nodata=0,
                 )
             ],
-            "platform": ["Sentinel-2A", "Sentinel-2B"],
+            "platform": ["Sentinel-1A", "Sentinel-1B"],
         },
     ),
 )
