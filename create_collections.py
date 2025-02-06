@@ -9,6 +9,7 @@ from dep_collections.dep_s1_geomad import dep_s1_geomad
 from dep_collections.dep_s2_geomad import dep_s2_geomad
 from dep_collections.dep_s2_mangroves import dep_s2_mangroves
 from dep_collections.dep_s2s1_mrd import dep_s2s1_mrd
+from dep_collections.dep_s2ls_intertidal import dep_s2ls_intertidal
 
 STAGING_URL = "https://stac.staging.digitalearthpacific.io"
 OUT_FOLDER = "collections"
@@ -24,6 +25,7 @@ all_collections = (
     dep_s2_geomad,
     dep_s2_mangroves,
     dep_s2s1_mrd,
+    dep_s2ls_intertidal
 )
 
 for collection in all_collections:
