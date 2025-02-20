@@ -20,7 +20,7 @@ dep_s2_mangroves = Collection(
     title="Mangroves Extent",
     extent=dep_s2_mangroves_extent,
     license="CC-BY-4.0",
-    keywords=["Landsat", "Mangroves", "GMW", "Pacific"],
+    keywords=["Sentinel-2", "Mangroves", "GMW", "Pacific"],
     providers=[
         Provider(
             name="Digital Earth Pacific",
@@ -28,16 +28,15 @@ dep_s2_mangroves = Collection(
             url="https://digitalearthpacific.org",
         ),
         Provider(
-            name="Microsoft",
-            roles=["host"],
-            url="https://microsoft.com",
-        ),
-        Provider(
             name="ESA",
             roles=["producer", "licensor"],
             url="https://sentinel.esa.int/web/sentinel/missions/sentinel-2",
         ),
-        Provider(name="Esri", roles=["processor"], url="https://www.esri.com/"),
+        Provider(
+            name="Element-84",
+            roles=["processor", "host"],
+            url="https://www.element84.com",
+        )
     ],
     summaries=Summaries(
         {
@@ -50,15 +49,7 @@ dep_s2_mangroves = Collection(
                     "min": 0,
                     "max": 2,
                     "nodata": -32767,
-                },
-                {
-                    "name": "ndvi",
-                    "common_name": "ndvi",
-                    "description": "Normalised difference vegetation index",
-                    "min": -1,
-                    "max": 1,
-                    "nodata": -32767,
-                },
+                }
             ],
             "platform": ["Sentinel-2A", "Sentinel-2B"],
         },

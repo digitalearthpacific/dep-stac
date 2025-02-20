@@ -1,7 +1,7 @@
 {
   "type": "Collection",
   "id": "dep_s2_mangroves",
-  "stac_version": "1.0.0",
+  "stac_version": "1.1.0",
   "description": "Mangroves Extent over the Pacific.",
   "links": [
     {
@@ -39,7 +39,7 @@
   },
   "license": "CC-BY-4.0",
   "keywords": [
-    "Landsat",
+    "Sentinel-2",
     "Mangroves",
     "GMW",
     "Pacific"
@@ -54,13 +54,6 @@
       "url": "https://digitalearthpacific.org"
     },
     {
-      "name": "Microsoft",
-      "roles": [
-        "host"
-      ],
-      "url": "https://microsoft.com"
-    },
-    {
       "name": "ESA",
       "roles": [
         "producer",
@@ -69,11 +62,12 @@
       "url": "https://sentinel.esa.int/web/sentinel/missions/sentinel-2"
     },
     {
-      "name": "Esri",
+      "name": "Element-84",
       "roles": [
-        "processor"
+        "processor",
+        "host"
       ],
-      "url": "https://www.esri.com/"
+      "url": "https://www.element84.com"
     }
   ],
   "summaries": {
@@ -87,14 +81,6 @@
         "description": "Mangrove cover",
         "min": 0,
         "max": 2,
-        "nodata": -32767
-      },
-      {
-        "name": "ndvi",
-        "common_name": "ndvi",
-        "description": "Normalised difference vegetation index",
-        "min": -1,
-        "max": 1,
         "nodata": -32767
       }
     ],

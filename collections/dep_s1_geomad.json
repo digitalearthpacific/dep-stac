@@ -1,7 +1,7 @@
 {
   "type": "Collection",
   "id": "dep_s1_geomad",
-  "stac_version": "1.0.0",
+  "stac_version": "1.1.0",
   "description": "Sentinel-1 mean and median annual geomad.",
   "links": [
     {
