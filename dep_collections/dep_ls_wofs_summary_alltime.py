@@ -14,10 +14,10 @@ dep_ls_wofs_extent = Extent(
 )
 
 # Create a Collection
-dep_ls_wofs_summary_annual = Collection(
-    id="dep_ls_wofs_summary_annual",
-    description="WOfS annual summary over the Pacific.",
-    title="WOfS Landsat Annual Summary ",
+dep_ls_wofs_summary_alltime = Collection(
+    id="dep_ls_wofs_summary_alltime",
+    description="WOfS all time (1984-2023) summary over the Pacific.",
+    title="WOfS Landsat All-time Summary ",
     extent=dep_ls_wofs_extent,
     license="CC-BY-4.0",
     keywords=["Landsat", "WOfS", "Water", "Pacific"],
