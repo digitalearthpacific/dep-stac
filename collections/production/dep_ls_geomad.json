@@ -1,0 +1,172 @@
+{
+  "type": "Collection",
+  "id": "dep_ls_geomad",
+  "stac_version": "1.1.0",
+  "description": "Landsat Geometric Median and Absolute Deviations (GeoMAD) over the Pacific.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "https://stac.digitalearthpacific.org/collections/dep_ls_geomad",
+      "type": "application/json",
+      "title": "Landsat GeoMAD"
+    },
+    {
+      "rel": "self",
+      "href": "https://stac.digitalearthpacific.org/collections/dep_ls_geomad",
+      "type": "application/json"
+    }
+  ],
+  "title": "Landsat GeoMAD",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180,
+          -90,
+          180,
+          90
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "1980-01-01T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "Landsat",
+    "GeoMAD",
+    "Pacific"
+  ],
+  "providers": [
+    {
+      "name": "Digital Earth Pacific",
+      "roles": [
+        "processor",
+        "host"
+      ],
+      "url": "https://digitalearthpacific.org"
+    },
+    {
+      "name": "Microsoft",
+      "roles": [
+        "host"
+      ],
+      "url": "https://microsoft.com"
+    },
+    {
+      "name": "USGS",
+      "roles": [
+        "producer",
+        "processor",
+        "licensor"
+      ],
+      "url": "https://www.usgs.gov/landsat-missions/landsat-collection-2-level-2-science-products"
+    },
+    {
+      "name": "NASA",
+      "roles": [
+        "licensor"
+      ],
+      "url": "https://www.nasa.gov/"
+    }
+  ],
+  "summaries": {
+    "gsd": [
+      30
+    ],
+    "eo:bands": [
+      {
+        "name": "red",
+        "common_name": "red",
+        "description": "Median for red band",
+        "min": 0,
+        "max": 10000,
+        "nodata": 0
+      },
+      {
+        "name": "green",
+        "common_name": "green",
+        "description": "Median for green band",
+        "min": 0,
+        "max": 10000,
+        "nodata": 0
+      },
+      {
+        "name": "blue",
+        "common_name": "blue",
+        "description": "Median for blue band",
+        "min": 0,
+        "max": 10000,
+        "nodata": 0
+      },
+      {
+        "name": "nir08",
+        "common_name": "nir08",
+        "description": "Median for nir08 band",
+        "min": 0,
+        "max": 10000,
+        "nodata": 0
+      },
+      {
+        "name": "swir16",
+        "common_name": "swir16",
+        "description": "Median for swir16 band",
+        "min": 0,
+        "max": 10000,
+        "nodata": 0
+      },
+      {
+        "name": "swir22",
+        "common_name": "swir22",
+        "description": "Median for swir22 band",
+        "min": 0,
+        "max": 10000,
+        "nodata": 0
+      },
+      {
+        "name": "emad",
+        "common_name": "Euclidean MAD",
+        "description": "Euclidean median absolute deviations across all bands",
+        "min": 0,
+        "max": 10000,
+        "nodata": 0
+      },
+      {
+        "name": "smad",
+        "common_name": "Spectral MAD",
+        "description": "Spectral median absolute deviations across all bands",
+        "min": 0,
+        "max": 10000,
+        "nodata": 0
+      },
+      {
+        "name": "bcmad",
+        "common_name": "Bray-curtis MAD",
+        "description": "Bray-curtis median absolute deviations across all bands",
+        "min": 0,
+        "max": 10000,
+        "nodata": 0
+      },
+      {
+        "name": "count",
+        "common_name": "Count clear",
+        "description": "Count of clear observations",
+        "min": 0,
+        "max": 250,
+        "nodata": 0
+      }
+    ],
+    "platform": [
+      "landsat-5",
+      "landsat-7",
+      "landsat-8",
+      "landsat-9"
+    ]
+  }
+}

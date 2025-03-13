@@ -1,0 +1,114 @@
+{
+  "type": "Collection",
+  "id": "dep_ls_wofs_summary_alltime",
+  "stac_version": "1.1.0",
+  "description": "WOfS all time (1984-2023) summary over the Pacific.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "https://stac.digitalearthpacific.org/collections/dep_ls_wofs_summary_alltime",
+      "type": "application/json",
+      "title": "WOfS Landsat All-time Summary "
+    },
+    {
+      "rel": "self",
+      "href": "https://stac.digitalearthpacific.org/collections/dep_ls_wofs_summary_alltime",
+      "type": "application/json"
+    }
+  ],
+  "title": "WOfS Landsat All-time Summary ",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180,
+          -90,
+          180,
+          90
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "1980-01-01T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "Landsat",
+    "WOfS",
+    "Water",
+    "Pacific"
+  ],
+  "providers": [
+    {
+      "name": "Digital Earth Pacific",
+      "roles": [
+        "processor",
+        "host"
+      ],
+      "url": "https://digitalearthpacific.org"
+    },
+    {
+      "name": "USGS",
+      "roles": [
+        "producer",
+        "processor",
+        "licensor"
+      ],
+      "url": "https://www.usgs.gov/landsat-missions/landsat-collection-2-level-2-science-products"
+    },
+    {
+      "name": "NASA",
+      "roles": [
+        "licensor"
+      ],
+      "url": "https://www.nasa.gov/"
+    }
+  ],
+  "summaries": {
+    "gsd": [
+      30
+    ],
+    "eo:bands": [
+      {
+        "name": "count_clear",
+        "description": "Count of clear observations",
+        "min": 0,
+        "max": 32767,
+        "nodata": -999
+      },
+      {
+        "name": "count_wet",
+        "description": "Count of observations that are water",
+        "min": 0,
+        "max": 32767,
+        "nodata": -999
+      },
+      {
+        "name": "frequency",
+        "description": "Frequency of water observations",
+        "min": 0,
+        "max": 1,
+        "nodata": "nan"
+      },
+      {
+        "name": "frequency_masked",
+        "description": "Frequency of water observations, with ocean masked",
+        "min": 0,
+        "max": 1,
+        "nodata": "nan"
+      }
+    ],
+    "platform": [
+      "landsat-5",
+      "landsat-7",
+      "landsat-8",
+      "landsat-9"
+    ]
+  }
+}
