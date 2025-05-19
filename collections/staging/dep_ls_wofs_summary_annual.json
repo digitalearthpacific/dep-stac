@@ -1,7 +1,7 @@
 {
   "type": "Collection",
   "id": "dep_ls_wofs_summary_annual",
-  "stac_version": "1.0.0",
+  "stac_version": "1.1.0",
   "description": "WOfS annual summary over the Pacific.",
   "links": [
     {

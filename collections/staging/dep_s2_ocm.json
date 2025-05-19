@@ -1,7 +1,7 @@
 {
   "type": "Collection",
   "id": "dep_s2_ocm",
-  "stac_version": "1.0.0",
+  "stac_version": "1.1.0",
   "description": "Cloud masks for Sentinel-2 produced by Omnicloudmask",
   "links": [
     {
