@@ -1,7 +1,7 @@
 {
   "type": "Collection",
   "id": "dep_s2ls_intertidal",
-  "stac_version": "1.1.0",
+  "stac_version": "1.0.0",
   "description": "Intertidal Elevation and Exposure for the Pacific Islands",
   "links": [
     {

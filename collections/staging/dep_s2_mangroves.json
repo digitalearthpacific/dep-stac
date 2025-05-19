@@ -1,7 +1,7 @@
 {
   "type": "Collection",
   "id": "dep_s2_mangroves",
-  "stac_version": "1.1.0",
+  "stac_version": "1.0.0",
   "description": "Mangroves Extent over the Pacific.",
   "links": [
     {

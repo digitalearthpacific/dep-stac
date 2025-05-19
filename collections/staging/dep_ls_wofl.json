@@ -1,7 +1,7 @@
 {
   "type": "Collection",
   "id": "dep_ls_wofl",
-  "stac_version": "1.1.0",
+  "stac_version": "1.0.0",
   "description": "Water observations from space (WOfS) feature layers",
   "links": [
     {

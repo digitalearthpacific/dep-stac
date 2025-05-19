@@ -1,22 +1,22 @@
 {
   "type": "Collection",
-  "id": "dep_s2s1_mrd",
+  "id": "dep_s2_ocm",
   "stac_version": "1.0.0",
-  "description": "Mineral resource detection in Fiji.",
+  "description": "Cloud masks for Sentinel-2 produced by Omnicloudmask",
   "links": [
     {
       "rel": "root",
-      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_s2s1_mrd",
+      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_s2_ocm",
       "type": "application/json",
-      "title": "Mineral Resource Detection"
+      "title": "Sentinel-2 Omnicloudmask"
     },
     {
       "rel": "self",
-      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_s2s1_mrd",
+      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_s2_ocm",
       "type": "application/json"
     }
   ],
-  "title": "Mineral Resource Detection",
+  "title": "Sentinel-2 Omnicloudmask",
   "extent": {
     "spatial": {
       "bbox": [
@@ -39,9 +39,7 @@
   },
   "license": "CC-BY-4.0",
   "keywords": [
-    "Sentinel-1",
     "Sentinel-2",
-    "Land-use/Land-cover",
     "Pacific"
   ],
   "providers": [
@@ -52,6 +50,22 @@
         "host"
       ],
       "url": "https://digitalearthpacific.org"
+    },
+    {
+      "name": "Element-84",
+      "roles": [
+        "processor",
+        "host"
+      ],
+      "url": "https://www.element84.com"
+    },
+    {
+      "name": "ESA",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://sentinel.esa.int/web/sentinel/missions/sentinel-2"
     }
   ],
   "summaries": {
@@ -60,26 +74,13 @@
     ],
     "eo:bands": [
       {
-        "name": "class",
-        "common_name": "classification",
-        "description": "Land use classification",
+        "name": "mask",
+        "common_name": "mask",
+        "description": "Cloud mask",
         "min": 0,
-        "max": 8,
-        "nodata": 255
-      },
-      {
-        "name": "proba",
-        "common_name": "probability",
-        "description": "Probability of land use classification",
-        "min": 0,
-        "max": 100,
-        "nodata": 255
+        "max": 3,
+        "nodata": 0
       }
-    ],
-    "platform": [
-      "Sentinel-1",
-      "Sentinel-2",
-      "esa-30m"
     ]
   }
 }
