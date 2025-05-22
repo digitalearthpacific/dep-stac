@@ -1,0 +1,108 @@
+{
+  "type": "Collection",
+  "id": "dep_s2_sdb",
+  "stac_version": "1.1.0",
+  "description": "Satellite-derived Bathymetry in the Pacific",
+  "links": [
+    {
+      "rel": "root",
+      "href": "https://stac.digitalearthpacific.org/collections/dep_s2_sdb",
+      "type": "application/json",
+      "title": "Satellite-derived Bathymetry"
+    },
+    {
+      "rel": "self",
+      "href": "https://stac.digitalearthpacific.org/collections/dep_s2_sdb",
+      "type": "application/json"
+    }
+  ],
+  "title": "Satellite-derived Bathymetry",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          100,
+          -30,
+          260,
+          30
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2012-01-01T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "Sentinel-2",
+    "Bathymetry",
+    "Pacific"
+  ],
+  "providers": [
+    {
+      "name": "Digital Earth Pacific",
+      "roles": [
+        "processor",
+        "host"
+      ],
+      "url": "https://digitalearthpacific.org"
+    },
+    {
+      "name": "ESA",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://sentinel.esa.int/web/sentinel/missions/sentinel-2"
+    }
+  ],
+  "summaries": {
+    "gsd": [
+      10
+    ],
+    "eo:bands": [
+      {
+        "name": "depth",
+        "common_name": "depth",
+        "description": "Mean of the estimated depth of water, masked by a count of the number of times it was estimated",
+        "min": 0,
+        "max": 2,
+        "nodata": -32767
+      },
+      {
+        "name": "mean",
+        "common_name": "mean",
+        "description": "Mean of the depth of water estimated",
+        "min": 0,
+        "max": 2,
+        "nodata": -32767
+      },
+      {
+        "name": "stdev",
+        "common_name": "stdev",
+        "description": "Standard deviation of the depth of water",
+        "min": 0,
+        "max": 2,
+        "nodata": -32767
+      },
+      {
+        "name": "count",
+        "common_name": "count",
+        "description": "Count of the number of times the depth was estimated",
+        "min": 0,
+        "max": 2,
+        "nodata": -32767
+      }
+    ],
+    "platform": [
+      "Sentinel-2A",
+      "Sentinel-2B",
+      "Sentinel-2C"
+    ]
+  }
+}

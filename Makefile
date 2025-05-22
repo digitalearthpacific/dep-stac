@@ -7,7 +7,8 @@ shell:
 	docker-compose exec -it stac fish
 
 create_collections:
-	python3 create_collections.py
+	python3 create_collections.py --env production
+	python3 create_collections.py --env staging
 
 init:
 	docker-compose exec stac \
