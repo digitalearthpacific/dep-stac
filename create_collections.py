@@ -29,6 +29,7 @@ PRODUCTION_COLLECTIONS = (
     dep_s1_geomad,
     dep_s2_geomad,
     dep_s2_mangroves,
+    dep_s2_sdb,
     dep_s2s1_mrd,
     dep_s2ls_intertidal,
 )
