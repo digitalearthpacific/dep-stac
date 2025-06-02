@@ -54,7 +54,9 @@ app = typer.Typer()
 
 @app.command()
 def render_collections(
-    env: str = typer.Option("staging", help="Environment to use: staging or production")
+    env: str = typer.Option(
+        "staging", help="Environment to use: staging or production"
+    ),
 ):
     is_prod = env == "production"
 
