@@ -52,7 +52,7 @@ dep_s1_geomad = Collection(
             name="ESA",
             roles=["producer", "licensor"],
             url="https://sentinel.esa.int/web/sentinel/missions/sentinel-2",
-        )
+        ),
     ],
     summaries=Summaries(
         {
@@ -64,7 +64,29 @@ dep_s1_geomad = Collection(
                     description=f"Median for {band} band",
                     min=0,
                     max=1,
-                    nodata=0,
+                    nodata="nan",
+                )
+                for band in S1_BANDS
+            ]
+            + [
+                dict(
+                    name=f"mean_{band}",
+                    common_name=band,
+                    description=f"Mean for {band} band",
+                    min=0,
+                    max=1,
+                    nodata="nan",
+                )
+                for band in S1_BANDS
+            ]
+            + [
+                dict(
+                    name=f"stdev_{band}",
+                    common_name=band,
+                    description=f"Standard deviation for {band} band",
+                    min=0,
+                    max=1,
+                    nodata="nan",
                 )
                 for band in S1_BANDS
             ]
@@ -75,7 +97,7 @@ dep_s1_geomad = Collection(
                     description=f"{band[1]} median absolute deviations across all bands",
                     min=0,
                     max=1,
-                    nodata=0,
+                    nodata="nan",
                 )
                 for band in MAD_BANDS
             ]

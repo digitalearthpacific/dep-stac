@@ -45,7 +45,7 @@ dep_s2_ocm = Collection(
                 dict(
                     name="mask",
                     common_name="mask",
-                    description=f"Cloud mask",
+                    description="Cloud mask",
                     min=0,
                     max=3,
                     nodata=0,
