@@ -9,6 +9,7 @@ from dep_collections.dep_ls_wofs_summary_annual import dep_ls_wofs_summary_annua
 from dep_collections.dep_ls_wofs_summary_alltime import dep_ls_wofs_summary_alltime
 from dep_collections.dep_ls_wofl import dep_ls_wofl
 from dep_collections.dep_ls_fc import dep_ls_fc
+from dep_collections.dep_pdhhdx_population import dep_pdhhdx_population
 from dep_collections.dep_s1_geomad import dep_s1_geomad
 from dep_collections.dep_s2_geomad import dep_s2_geomad
 from dep_collections.dep_s2_mangroves import dep_s2_mangroves
@@ -41,6 +42,7 @@ STAGING_COLLECTIONS = (
     dep_ls_wofl,
     dep_ls_geomad,
     dep_ls_fc,
+    dep_pdhhdx_population,
     dep_s1_geomad,
     dep_s2_geomad,
     dep_s2_mangroves,
