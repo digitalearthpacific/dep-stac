@@ -52,8 +52,8 @@ dep_pdhhdx_population = Collection(
                     "common_name": "pop_per_sqkm",
                     "description": "Population per square kilometer",
                     "min": 0,
-                    "max": 3.4e+038
-                    "nodata": "nan"
+                    "max": 200000,
+                    "nodata": "nan",
                 },
             ],
         },
