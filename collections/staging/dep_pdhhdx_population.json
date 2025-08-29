@@ -1,0 +1,94 @@
+{
+  "type": "Collection",
+  "id": "dep_pdhhdx_population",
+  "stac_version": "1.1.0",
+  "description": "Population density",
+  "links": [
+    {
+      "rel": "root",
+      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_pdhhdx_population",
+      "type": "application/json",
+      "title": "Population density"
+    },
+    {
+      "rel": "self",
+      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_pdhhdx_population",
+      "type": "application/json"
+    }
+  ],
+  "title": "Population density",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180,
+          -90,
+          180,
+          90
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "1980-01-01T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "Population"
+  ],
+  "providers": [
+    {
+      "name": "Digital Earth Pacific",
+      "roles": [
+        "processor",
+        "host"
+      ],
+      "url": "https://digitalearthpacific.org"
+    },
+    {
+      "name": "Amazon",
+      "roles": [
+        "host"
+      ],
+      "url": "https://aws.amazon.com/"
+    },
+    {
+      "name": "WorldPop",
+      "roles": [
+        "producer",
+        "processor",
+        "licensor"
+      ],
+      "url": "https://www.worldpop.org/"
+    },
+    {
+      "name": "Pacific Data Hub",
+      "roles": [
+        "producer",
+        "processor",
+        "licensor"
+      ],
+      "url": "https://pacificdata.org/"
+    }
+  ],
+  "summaries": {
+    "gsd": [
+      100
+    ],
+    "eo:bands": [
+      {
+        "name": "pop_per_sqkm",
+        "common_name": "pop_per_sqkm",
+        "description": "Population per square kilometer",
+        "min": 0,
+        "max": 200000,
+        "nodata": "nan"
+      }
+    ]
+  }
+}
