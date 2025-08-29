@@ -12,45 +12,75 @@
     },
     {
       "rel": "self",
-      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_ls_fc",
+      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_ls_fc_summary_annual",
       "type": "application/json"
     }
   ],
   "title": "Fractional Cover Annual Summary",
   "extent": {
     "spatial": {
-      "bbox": [[-180, -90, 180, 90]]
+      "bbox": [
+        [
+          -180,
+          -90,
+          180,
+          90
+        ]
+      ]
     },
     "temporal": {
-      "interval": [["1980-01-01T00:00:00Z", null]]
+      "interval": [
+        [
+          "1980-01-01T00:00:00Z",
+          null
+        ]
+      ]
     }
   },
   "license": "CC-BY-4.0",
-  "keywords": ["Landsat", "Vegetation", "Bare ground", "Pacific"],
+  "keywords": [
+    "Landsat",
+    "Vegetation",
+    "Bare ground",
+    "Pacific"
+  ],
   "providers": [
     {
       "name": "Digital Earth Pacific",
-      "roles": ["processor", "host"],
+      "roles": [
+        "processor",
+        "host"
+      ],
       "url": "https://digitalearthpacific.org"
     },
     {
       "name": "Amazon",
-      "roles": ["host"],
-      "url": "https://aws.amazon.com/"
+      "roles": [
+        "host"
+      ],
+      "url": "https://aws.amazon.com"
     },
     {
       "name": "USGS",
-      "roles": ["producer", "processor", "licensor"],
+      "roles": [
+        "producer",
+        "processor",
+        "licensor"
+      ],
       "url": "https://www.usgs.gov/landsat-missions/landsat-collection-2-level-2-science-products"
     },
     {
       "name": "NASA",
-      "roles": ["licensor"],
+      "roles": [
+        "licensor"
+      ],
       "url": "https://www.nasa.gov/"
     }
   ],
   "summaries": {
-    "gsd": [30],
+    "gsd": [
+      30
+    ],
     "eo:bands": [
       {
         "name": "bs_pc_10",
@@ -140,7 +170,6 @@
       }
     ],
     "platform": [
-      "landsat-4",
       "landsat-5",
       "landsat-7",
       "landsat-8",
