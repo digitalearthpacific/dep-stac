@@ -21,6 +21,7 @@ from dep_collections.dep_s2_sdb import dep_s2_sdb
 from dep_collections.dep_s2s1_mrd import dep_s2s1_mrd
 from dep_collections.dep_s2ls_intertidal import dep_s2ls_intertidal
 from dep_collections.dep_s2_ocm import dep_s2_ocm
+from dep_collections.dep_s2_seagrass import dep_s2_seagrass
 
 STAGING_URL = "https://stac.staging.digitalearthpacific.io"
 PRODUCTION_URL = "https://stac.digitalearthpacific.org"
@@ -54,6 +55,7 @@ STAGING_COLLECTIONS = (
     dep_s1_geomad,
     dep_s2_geomad,
     dep_s2_mangroves,
+    dep_s2_seagrass,
     dep_s2_sdb,
     dep_s2s1_mrd,
     dep_s2ls_intertidal,

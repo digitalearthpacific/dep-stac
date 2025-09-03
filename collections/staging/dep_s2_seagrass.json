@@ -1,0 +1,108 @@
+{
+  "type": "Collection",
+  "id": "dep_s2_seagrass",
+  "stac_version": "1.1.0",
+  "description": "Seagrass extent in the Pacific",
+  "links": [
+    {
+      "rel": "root",
+      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_s2_seagrass",
+      "type": "application/json",
+      "title": "Seagrass extent from a random forest model"
+    },
+    {
+      "rel": "self",
+      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_s2_seagrass",
+      "type": "application/json"
+    }
+  ],
+  "title": "Seagrass extent from a random forest model",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          100,
+          -30,
+          260,
+          30
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2012-01-01T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "Sentinel-2",
+    "Seagrass",
+    "Pacific"
+  ],
+  "providers": [
+    {
+      "name": "Digital Earth Pacific",
+      "roles": [
+        "processor",
+        "host"
+      ],
+      "url": "https://digitalearthpacific.org"
+    },
+    {
+      "name": "ESA",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://sentinel.esa.int/web/sentinel/missions/sentinel-2"
+    }
+  ],
+  "summaries": {
+    "gsd": [
+      10
+    ],
+    "eo:bands": [
+      {
+        "name": "seagrass",
+        "common_name": "seagrass",
+        "description": "Extent of seagrass",
+        "min": 0,
+        "max": 1,
+        "nodata": 255
+      },
+      {
+        "name": "classification",
+        "common_name": "classification",
+        "description": "Result from the random forest coastal classification",
+        "min": 0,
+        "max": 16,
+        "nodata": 255
+      },
+      {
+        "name": "seagrass_probability",
+        "common_name": "seagrass_probability",
+        "description": "Probability of seagrass presence",
+        "min": 0,
+        "max": 100,
+        "nodata": 255
+      },
+      {
+        "name": "seagrass_threshold_60",
+        "common_name": "seagrass_threshold_60",
+        "description": "Seagrass presence threshold (60%) from the probability",
+        "min": 0,
+        "max": 1,
+        "nodata": 255
+      }
+    ],
+    "platform": [
+      "Sentinel-2A",
+      "Sentinel-2B",
+      "Sentinel-2C"
+    ]
+  }
+}
