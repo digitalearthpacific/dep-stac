@@ -1,23 +1,24 @@
 #!/usr/bin/env python3
 
-import typer
-
 from pathlib import Path
 
-from dep_collections.dep_ls_geomad import dep_ls_geomad
-from dep_collections.dep_ls_wofs_summary_annual import dep_ls_wofs_summary_annual
-from dep_collections.dep_ls_wofs_summary_alltime import dep_ls_wofs_summary_alltime
-from dep_collections.dep_ls_wofl import dep_ls_wofl
+import typer
+
 from dep_collections.dep_ls_fc import dep_ls_fc
 from dep_collections.dep_ls_fc_summary_annual import dep_ls_fc_summary_annual
+from dep_collections.dep_ls_geomad import dep_ls_geomad
+from dep_collections.dep_ls_wofl import dep_ls_wofl
+from dep_collections.dep_ls_wofs_summary_alltime import dep_ls_wofs_summary_alltime
+from dep_collections.dep_ls_wofs_summary_annual import dep_ls_wofs_summary_annual
 from dep_collections.dep_s1_geomad import dep_s1_geomad
 from dep_collections.dep_s2_geomad import dep_s2_geomad
 from dep_collections.dep_s2_mangroves import dep_s2_mangroves
-from dep_collections.dep_s2_sdb import dep_s2_sdb
-from dep_collections.dep_s2s1_mrd import dep_s2s1_mrd
-from dep_collections.dep_s2ls_intertidal import dep_s2ls_intertidal
 from dep_collections.dep_s2_ocm import dep_s2_ocm
+from dep_collections.dep_s2_sdb import dep_s2_sdb
 from dep_collections.dep_s2_seagrass import dep_s2_seagrass
+from dep_collections.dep_s2_vegheight import dep_s2_vegheight
+from dep_collections.dep_s2ls_intertidal import dep_s2ls_intertidal
+from dep_collections.dep_s2s1_mrd import dep_s2s1_mrd
 
 STAGING_URL = "https://stac.staging.digitalearthpacific.io"
 PRODUCTION_URL = "https://stac.digitalearthpacific.org"
@@ -50,6 +51,7 @@ STAGING_COLLECTIONS = (
     dep_s2_mangroves,
     dep_s2_seagrass,
     dep_s2_sdb,
+    dep_s2_vegheight,
     dep_s2s1_mrd,
     dep_s2ls_intertidal,
     dep_s2_ocm,
