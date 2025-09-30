@@ -31,6 +31,7 @@ PRODUCTION_COLLECTIONS = (
     dep_ls_wofl,
     dep_ls_geomad,
     dep_ls_fc,
+    dep_ls_fc_summary_annual,
     dep_s1_geomad,
     dep_s2_geomad,
     dep_s2_mangroves,

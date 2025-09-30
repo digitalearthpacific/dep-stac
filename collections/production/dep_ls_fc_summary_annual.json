@@ -1,0 +1,179 @@
+{
+  "type": "Collection",
+  "id": "dep_ls_fc_summary_annual",
+  "stac_version": "1.1.0",
+  "description": "Annual summaries of fractional cover",
+  "links": [
+    {
+      "rel": "root",
+      "href": "https://stac.digitalearthpacific.org/collections/dep_ls_fc_summary_annual",
+      "type": "application/json",
+      "title": "Fractional Cover Annual Summary"
+    },
+    {
+      "rel": "self",
+      "href": "https://stac.digitalearthpacific.org/collections/dep_ls_fc_summary_annual",
+      "type": "application/json"
+    }
+  ],
+  "title": "Fractional Cover Annual Summary",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180,
+          -90,
+          180,
+          90
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "1980-01-01T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "Landsat",
+    "Vegetation",
+    "Bare ground",
+    "Pacific"
+  ],
+  "providers": [
+    {
+      "name": "Digital Earth Pacific",
+      "roles": [
+        "processor",
+        "host"
+      ],
+      "url": "https://digitalearthpacific.org"
+    },
+    {
+      "name": "Amazon",
+      "roles": [
+        "host"
+      ],
+      "url": "https://aws.amazon.com"
+    },
+    {
+      "name": "USGS",
+      "roles": [
+        "producer",
+        "processor",
+        "licensor"
+      ],
+      "url": "https://www.usgs.gov/landsat-missions/landsat-collection-2-level-2-science-products"
+    },
+    {
+      "name": "NASA",
+      "roles": [
+        "licensor"
+      ],
+      "url": "https://www.nasa.gov/"
+    }
+  ],
+  "summaries": {
+    "gsd": [
+      30
+    ],
+    "eo:bands": [
+      {
+        "name": "bs_pc_10",
+        "common_name": "10th percentile of bare soil percentage",
+        "description": "",
+        "min": 0,
+        "max": 127,
+        "nodata": 255
+      },
+      {
+        "name": "bs_pc_50",
+        "common_name": "50th percentile of bare soil percentage",
+        "description": "",
+        "min": 0,
+        "max": 127,
+        "nodata": 255
+      },
+      {
+        "name": "bs_pc_90",
+        "common_name": "90th percentile of bare soil percentage",
+        "description": "",
+        "min": 0,
+        "max": 127,
+        "nodata": 255
+      },
+      {
+        "name": "pv_pc_10",
+        "common_name": "10th percentile of photosynthetic vegetation percentage",
+        "description": "",
+        "min": 0,
+        "max": 127,
+        "nodata": 255
+      },
+      {
+        "name": "pv_pc_50",
+        "common_name": "50th percentile of photosynthetic vegetation percentage",
+        "description": "",
+        "min": 0,
+        "max": 127,
+        "nodata": 255
+      },
+      {
+        "name": "bs_pc_90",
+        "common_name": "90th percentile of photosynthetic vegetation percentage",
+        "description": "",
+        "min": 0,
+        "max": 127,
+        "nodata": 255
+      },
+      {
+        "name": "npv_pc_10",
+        "common_name": "10th percentile of non-photosynthetic vegetation percentage",
+        "description": "",
+        "min": 0,
+        "max": 127,
+        "nodata": 255
+      },
+      {
+        "name": "npv_pc_50",
+        "common_name": "50th percentile of non-photosynthetic vegetation percentage",
+        "description": "",
+        "min": 0,
+        "max": 127,
+        "nodata": 255
+      },
+      {
+        "name": "npv_pc_90",
+        "common_name": "90th percentile of non-photosynthetic vegetation percentage",
+        "description": "",
+        "min": 0,
+        "max": 127,
+        "nodata": 255
+      },
+      {
+        "name": "count_valid",
+        "common_name": "Count of clear and valid observations",
+        "description": "",
+        "min": 0,
+        "max": 32767
+      },
+      {
+        "name": "qa",
+        "common_name": "quality assurannce band",
+        "description": "",
+        "min": 0,
+        "max": 2
+      }
+    ],
+    "platform": [
+      "landsat-5",
+      "landsat-7",
+      "landsat-8",
+      "landsat-9"
+    ]
+  }
+}
