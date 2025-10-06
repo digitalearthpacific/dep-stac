@@ -1,0 +1,84 @@
+{
+  "type": "Collection",
+  "id": "dep_s2_vegheight",
+  "stac_version": "1.1.0",
+  "description": "Vegetation height in the Pacific",
+  "links": [
+    {
+      "rel": "root",
+      "href": "https://stac.digitalearthpacific.org/collections/dep_s2_vegheight",
+      "type": "application/json",
+      "title": "Vegetation height in the Pacific from Sentinel-2"
+    },
+    {
+      "rel": "self",
+      "href": "https://stac.digitalearthpacific.org/collections/dep_s2_vegheight",
+      "type": "application/json"
+    }
+  ],
+  "title": "Vegetation height in the Pacific from Sentinel-2",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          100,
+          -30,
+          260,
+          30
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2012-01-01T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "Sentinel-2",
+    "Vegetation",
+    "Pacific"
+  ],
+  "providers": [
+    {
+      "name": "Digital Earth Pacific",
+      "roles": [
+        "processor",
+        "host"
+      ],
+      "url": "https://digitalearthpacific.org"
+    },
+    {
+      "name": "ESA",
+      "roles": [
+        "producer",
+        "licensor"
+      ],
+      "url": "https://sentinel.esa.int/web/sentinel/missions/sentinel-2"
+    }
+  ],
+  "summaries": {
+    "gsd": [
+      10
+    ],
+    "eo:bands": [
+      {
+        "name": "height",
+        "common_name": "height",
+        "description": "Height of vegetation",
+        "min": 0.0,
+        "max": 40.0,
+        "nodata": "nan"
+      }
+    ],
+    "platform": [
+      "Sentinel-2A",
+      "Sentinel-2B",
+      "Sentinel-2C"
+    ]
+  }
+}
