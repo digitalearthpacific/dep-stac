@@ -8,17 +8,17 @@ from pystac import (
 )
 from datetime import datetime, timezone
 
-dep_s2_mangroves_extent = Extent(
+extent = Extent(
     SpatialExtent([[100, -30, 260, 30]]),
     TemporalExtent([[datetime(2012, 1, 1, 0, 0, 0, 0, timezone.utc), None]]),
 )
 
 # Create a Collection
-dep_s2_mangroves = Collection(
-    id="dep_s2_mangroves",
-    description="Mangroves Extent over the Pacific.",
-    title="Mangroves Extent",
-    extent=dep_s2_mangroves_extent,
+dep_s2_ammi = Collection(
+    id="dep_s2_ammi",
+    description="Mangroves Extent over the Pacific using the Automatic Mangrove Map and Index (AMMI) ",
+    title="Mangroves Extent (AMMI)",
+    extent=extent,
     license="CC-BY-4.0",
     keywords=["Sentinel-2", "Mangroves", "GMW", "Pacific"],
     providers=[
@@ -45,9 +45,9 @@ dep_s2_mangroves = Collection(
                 {
                     "name": "mangroves",
                     "common_name": "mangroves",
-                    "description": "Mangrove cover",
+                    "description": "Mangrove percentage",
                     "min": 0,
-                    "max": 2,
+                    "max": 100,
                     "nodata": 255,
                 }
             ],

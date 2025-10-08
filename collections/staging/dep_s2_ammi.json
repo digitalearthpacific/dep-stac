@@ -1,22 +1,22 @@
 {
   "type": "Collection",
-  "id": "dep_s2_mangroves",
+  "id": "dep_s2_ammi",
   "stac_version": "1.1.0",
-  "description": "Mangroves Extent over the Pacific.",
+  "description": "Mangroves Extent over the Pacific using the Automatic Mangrove Map and Index (AMMI) ",
   "links": [
     {
       "rel": "root",
-      "href": "https://stac.digitalearthpacific.org/collections/dep_s2_mangroves",
+      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_s2_ammi",
       "type": "application/json",
-      "title": "Mangroves Extent"
+      "title": "Mangroves Extent (AMMI)"
     },
     {
       "rel": "self",
-      "href": "https://stac.digitalearthpacific.org/collections/dep_s2_mangroves",
+      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_s2_ammi",
       "type": "application/json"
     }
   ],
-  "title": "Mangroves Extent",
+  "title": "Mangroves Extent (AMMI)",
   "extent": {
     "spatial": {
       "bbox": [
@@ -78,9 +78,9 @@
       {
         "name": "mangroves",
         "common_name": "mangroves",
-        "description": "Mangrove cover",
+        "description": "Mangrove percentage",
         "min": 0,
-        "max": 2,
+        "max": 100,
         "nodata": 255
       }
     ],

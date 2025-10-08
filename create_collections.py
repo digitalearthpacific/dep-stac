@@ -11,6 +11,7 @@ from dep_collections.dep_ls_wofl import dep_ls_wofl
 from dep_collections.dep_ls_wofs_summary_alltime import dep_ls_wofs_summary_alltime
 from dep_collections.dep_ls_wofs_summary_annual import dep_ls_wofs_summary_annual
 from dep_collections.dep_s1_geomad import dep_s1_geomad
+from dep_collections.dep_s2_ammi import dep_s2_ammi
 from dep_collections.dep_s2_geomad import dep_s2_geomad
 from dep_collections.dep_s2_mangroves import dep_s2_mangroves
 from dep_collections.dep_s2_ocm import dep_s2_ocm
@@ -33,6 +34,7 @@ PRODUCTION_COLLECTIONS = (
     dep_ls_fc,
     dep_ls_fc_summary_annual,
     dep_s1_geomad,
+    dep_s2_ammi,
     dep_s2_geomad,
     dep_s2_mangroves,
     dep_s2_seagrass,
@@ -50,6 +52,7 @@ STAGING_COLLECTIONS = (
     dep_ls_fc,
     dep_ls_fc_summary_annual,
     dep_s1_geomad,
+    dep_s2_ammi,
     dep_s2_geomad,
     dep_s2_mangroves,
     dep_s2_seagrass,

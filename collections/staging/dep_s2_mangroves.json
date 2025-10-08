@@ -81,7 +81,7 @@
         "description": "Mangrove cover",
         "min": 0,
         "max": 2,
-        "nodata": -32767
+        "nodata": 255
       }
     ],
     "platform": [
