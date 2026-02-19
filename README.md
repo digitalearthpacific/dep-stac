@@ -42,3 +42,11 @@ python ./get_insert_items.py \
   --bucket=my-bucket \
   --prefix=path/to/collection
 ```
+
+### Deleting Items for a Collection
+
+```bash
+psql -c "SET search_path TO pgstac,public; \
+        DELETE FROM items WHERE collection=collection-id; \
+        DELETE FROM collections WHERE id=collection-id;"
+```
