@@ -24,3 +24,21 @@ set up the collections JSON documents.
 ### Create a pull request
 
 Create a pull request, get it reviewed. Once merged, run the appropriate Argo workflow.
+
+## Adding documents to databse
+
+### Collections
+
+```bash
+For all the files in the collections folder, load them into the database
+ls | xargs -L 1 -d '\n' \
+  pypgstac load collections --method upsert
+```
+
+### Items
+
+```bash
+python ./get_insert_items.py \
+  --bucket=my-bucket \
+  --prefix=path/to/collection
+```
