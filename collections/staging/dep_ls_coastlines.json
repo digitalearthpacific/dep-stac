@@ -1,0 +1,92 @@
+{
+  "type": "Collection",
+  "id": "dep_ls_coastlines",
+  "stac_version": "1.1.0",
+  "description": "Annual coastline data derived from Landsat imagery.",
+  "links": [
+    {
+      "rel": "root",
+      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_ls_coastlines",
+      "type": "application/json",
+      "title": "Landsat Coastlines"
+    },
+    {
+      "rel": "self",
+      "href": "https://stac.staging.digitalearthpacific.io/collections/dep_ls_coastlines",
+      "type": "application/json"
+    }
+  ],
+  "title": "Landsat Coastlines",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -180,
+          -90,
+          180,
+          90
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "1980-01-01T00:00:00Z",
+          null
+        ]
+      ]
+    }
+  },
+  "license": "CC-BY-4.0",
+  "keywords": [
+    "Landsat",
+    "Coastlines",
+    "Pacific"
+  ],
+  "providers": [
+    {
+      "name": "Digital Earth Pacific",
+      "roles": [
+        "processor",
+        "host"
+      ],
+      "url": "https://digitalearthpacific.org"
+    },
+    {
+      "name": "USGS",
+      "roles": [
+        "producer",
+        "processor",
+        "licensor"
+      ],
+      "url": "https://www.usgs.gov/landsat-missions/landsat-collection-2-level-2-science-products"
+    },
+    {
+      "name": "NASA",
+      "roles": [
+        "licensor"
+      ],
+      "url": "https://www.nasa.gov/"
+    }
+  ],
+  "assets": {
+    "geopackage": {
+      "href": "https://s3.us-west-2.amazonaws.com/dep-public-data/dep_ls_coastlines/dep_ls_coastlines_0-7-0-55.gpkg",
+      "type": "application/geopackage+sqlite3",
+      "title": "Landsat Coastlines Geopackage",
+      "description": "Geopackage containing annual coastline data derived from Landsat imagery.",
+      "roles": [
+        "data"
+      ]
+    },
+    "pmtiles": {
+      "href": "https://s3.us-west-2.amazonaws.com/dep-public-data/dep_ls_coastlines/dep_ls_coastlines_0-7-0-55.pmtiles",
+      "type": "application/vnd.pmtiles",
+      "title": "Landsat Coastlines PMTiles",
+      "description": "PMTiles file containing annual coastline data derived from Landsat imagery.",
+      "roles": [
+        "data"
+      ]
+    }
+  }
+}
