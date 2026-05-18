@@ -6,6 +6,7 @@ import typer
 
 from dep_collections.dep_ls_fc import dep_ls_fc
 from dep_collections.dep_ls_fc_summary_annual import dep_ls_fc_summary_annual
+from dep_collections.dep_ls_coastlines import dep_ls_coastlines
 from dep_collections.dep_ls_geomad import dep_ls_geomad
 from dep_collections.dep_ls_wofl import dep_ls_wofl
 from dep_collections.dep_ls_wofs_summary_alltime import dep_ls_wofs_summary_alltime
@@ -42,6 +43,7 @@ PRODUCTION_COLLECTIONS = (
     dep_s2_vegheight,
     dep_s2s1_mrd,
     dep_s2ls_intertidal,
+    dep_ls_coastlines,
 )
 
 STAGING_COLLECTIONS = (
@@ -61,6 +63,7 @@ STAGING_COLLECTIONS = (
     dep_s2s1_mrd,
     dep_s2ls_intertidal,
     dep_s2_ocm,
+    dep_ls_coastlines,
 )
 
 

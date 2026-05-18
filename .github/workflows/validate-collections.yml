@@ -1,0 +1,26 @@
+name: Validate Collections
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install pystac[validation] pytest
+
+      - name: Run STAC collection validation
+        run: pytest tests/test_collections.py -v
