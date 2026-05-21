@@ -11,6 +11,20 @@
       "title": "Intertidal Elevation and Exposure"
     },
     {
+      "rel": "wms",
+      "href": "https://ows.prod.digitalearthpacific.io/",
+      "type": "application/vnd.ogc.wms_xml",
+      "title": "WMS Service for this Collection",
+      "wms:layers": [
+        "dep_s2ls_intertidal"
+      ],
+      "wms:styles": [
+        "Elevation",
+        "Exposure"
+      ],
+      "wms:dimensions": {}
+    },
+    {
       "rel": "self",
       "href": "https://stac.staging.digitalearthpacific.io/collections/dep_s2ls_intertidal",
       "type": "application/json"

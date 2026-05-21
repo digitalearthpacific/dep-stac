@@ -11,6 +11,24 @@
       "title": "WOfS Landsat All-time Summary "
     },
     {
+      "rel": "wms",
+      "href": "https://ows.prod.digitalearthpacific.io/",
+      "type": "application/vnd.ogc.wms_xml",
+      "title": "WMS Service for this Collection",
+      "wms:layers": [
+        "wofs_ls_summary_alltime"
+      ],
+      "wms:styles": [
+        "legacy_wofs_summary_alltime_frequency_masked",
+        "wofs_summary_alltime_frequency_masked",
+        "legacy_wofs_summary_alltime_frequency",
+        "wofs_summary_alltime_frequency",
+        "wofs_summary_alltime_wet",
+        "wofs_summary_alltime_clear"
+      ],
+      "wms:dimensions": {}
+    },
+    {
       "rel": "self",
       "href": "https://stac.digitalearthpacific.org/collections/dep_ls_wofs_summary_alltime",
       "type": "application/json"

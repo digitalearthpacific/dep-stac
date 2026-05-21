@@ -1,4 +1,5 @@
 from pystac import (
+    Link,
     Collection,
     Extent,
     SpatialExtent,
@@ -79,4 +80,19 @@ dep_ls_fc = Collection(
             "platform": ["landsat-4", "landsat-5", "landsat-7", "landsat-8", "landsat-9"],
         },
     ),
+)
+
+
+dep_ls_fc.add_link(
+    Link(
+        rel="wms",
+        target="https://ows.prod.digitalearthpacific.io/",
+        media_type="application/vnd.ogc.wms_xml",
+        title="WMS Service for this Collection",
+        extra_fields={
+            "wms:layers": ["dep_ls_fc"],
+            "wms:styles": ["fc_rgb_unmasked", "fc_rgb_masked"],
+            "wms:dimensions": {},
+        },
+    )
 )

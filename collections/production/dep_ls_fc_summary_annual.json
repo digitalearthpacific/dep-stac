@@ -11,6 +11,28 @@
       "title": "Fractional Cover Annual Summary"
     },
     {
+      "rel": "wms",
+      "href": "https://ows.prod.digitalearthpacific.io/",
+      "type": "application/vnd.ogc.wms_xml",
+      "title": "WMS Service for this Collection",
+      "wms:layers": [
+        "dep_ls_fc_summary_annual"
+      ],
+      "wms:styles": [
+        "fc_rgb",
+        "green_veg_10",
+        "green_veg_50",
+        "green_veg_90",
+        "non_green_veg_10",
+        "non_green_veg_50",
+        "non_green_veg_90",
+        "bare_ground_10",
+        "bare_ground_50",
+        "bare_ground_90"
+      ],
+      "wms:dimensions": {}
+    },
+    {
       "rel": "self",
       "href": "https://stac.digitalearthpacific.org/collections/dep_ls_fc_summary_annual",
       "type": "application/json"

@@ -1,6 +1,7 @@
 from datetime import datetime, timezone
 
 from pystac import (
+    Link,
     Collection,
     Extent,
     Provider,
@@ -52,4 +53,13 @@ dep_ls_coastlines = Collection(
             media_type="application/vnd.pmtiles",
         ),
     },
+)
+
+dep_ls_coastlines.add_link(
+    Link(
+        rel="wmts",
+        target="https://tileserver.prod.digitalearthpacific.io/styles/coastlines/wmts.xml",
+        media_type="application/xml",
+        title="WMTS Service for this Collection",
+    )
 )

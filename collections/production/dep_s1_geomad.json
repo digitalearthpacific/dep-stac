@@ -11,6 +11,29 @@
       "title": "Sentinel-1 Annual geomad"
     },
     {
+      "rel": "wms",
+      "href": "https://ows.prod.digitalearthpacific.io/",
+      "type": "application/vnd.ogc.wms_xml",
+      "title": "WMS Service for this Collection",
+      "wms:layers": [
+        "dep_s1_geomad"
+      ],
+      "wms:styles": [
+        "vv_vh_vh_over_vv",
+        "vv",
+        "vh",
+        "stdev_vv",
+        "stdev_vh",
+        "mean_vv",
+        "mean_vh",
+        "count",
+        "arcsec_smad",
+        "log_emad",
+        "log_bcmad"
+      ],
+      "wms:dimensions": {}
+    },
+    {
       "rel": "self",
       "href": "https://stac.digitalearthpacific.org/collections/dep_s1_geomad",
       "type": "application/json"

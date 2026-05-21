@@ -11,6 +11,12 @@
       "title": "Landsat Coastlines"
     },
     {
+      "rel": "wmts",
+      "href": "https://tileserver.prod.digitalearthpacific.io/styles/coastlines/wmts.xml",
+      "type": "application/xml",
+      "title": "WMTS Service for this Collection"
+    },
+    {
       "rel": "self",
       "href": "https://stac.staging.digitalearthpacific.io/collections/dep_ls_coastlines",
       "type": "application/json"

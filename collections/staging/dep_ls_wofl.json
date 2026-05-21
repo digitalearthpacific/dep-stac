@@ -11,6 +11,20 @@
       "title": "WOfS feature layer"
     },
     {
+      "rel": "wms",
+      "href": "https://ows.prod.digitalearthpacific.io/",
+      "type": "application/vnd.ogc.wms_xml",
+      "title": "WMS Service for this Collection",
+      "wms:layers": [
+        "dep_ls_wofl"
+      ],
+      "wms:styles": [
+        "observations",
+        "wet"
+      ],
+      "wms:dimensions": {}
+    },
+    {
       "rel": "self",
       "href": "https://stac.staging.digitalearthpacific.io/collections/dep_ls_wofl",
       "type": "application/json"

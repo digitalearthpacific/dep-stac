@@ -11,6 +11,24 @@
       "title": "WOfS Landsat Annual Summary "
     },
     {
+      "rel": "wms",
+      "href": "https://ows.prod.digitalearthpacific.io/",
+      "type": "application/vnd.ogc.wms_xml",
+      "title": "WMS Service for this Collection",
+      "wms:layers": [
+        "wofs_ls_summary_annual"
+      ],
+      "wms:styles": [
+        "legacy_wofs_summary_annual_frequency_masked",
+        "wofs_summary_annual_frequency_masked",
+        "legacy_wofs_summary_annual_frequency",
+        "wofs_summary_annual_frequency",
+        "wofs_summary_annual_wet",
+        "wofs_summary_annual_clear"
+      ],
+      "wms:dimensions": {}
+    },
+    {
       "rel": "self",
       "href": "https://stac.staging.digitalearthpacific.io/collections/dep_ls_wofs_summary_annual",
       "type": "application/json"

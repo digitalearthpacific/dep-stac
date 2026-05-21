@@ -1,4 +1,5 @@
 from pystac import (
+    Link,
     Collection,
     Extent,
     SpatialExtent,
@@ -55,4 +56,19 @@ dep_ls_wofl = Collection(
             "platform": ["landsat-5", "landsat-7", "landsat-8", "landsat-9"],
         },
     ),
+)
+
+
+dep_ls_wofl.add_link(
+    Link(
+        rel="wms",
+        target="https://ows.prod.digitalearthpacific.io/",
+        media_type="application/vnd.ogc.wms_xml",
+        title="WMS Service for this Collection",
+        extra_fields={
+            "wms:layers": ["dep_ls_wofl"],
+            "wms:styles": ["observations", "wet"],
+            "wms:dimensions": {},
+        },
+    )
 )
