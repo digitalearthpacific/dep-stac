@@ -11,6 +11,22 @@
       "title": "Seagrass extent from a random forest model"
     },
     {
+      "rel": "wms",
+      "href": "https://ows.prod.digitalearthpacific.io/",
+      "type": "application/vnd.ogc.wms_xml",
+      "title": "WMS Service for this Collection",
+      "wms:layers": [
+        "dep_s2_seagrass"
+      ],
+      "wms:styles": [
+        "seagrass",
+        "probability",
+        "classification",
+        "seagrass_60"
+      ],
+      "wms:dimensions": {}
+    },
+    {
       "rel": "self",
       "href": "https://stac.digitalearthpacific.org/collections/dep_s2_seagrass",
       "type": "application/json"

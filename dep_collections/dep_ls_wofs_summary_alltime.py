@@ -1,4 +1,5 @@
 from pystac import (
+    Link,
     Collection,
     Extent,
     SpatialExtent,
@@ -70,4 +71,19 @@ dep_ls_wofs_summary_alltime = Collection(
             "platform": ["landsat-5", "landsat-7", "landsat-8", "landsat-9"],
         },
     ),
+)
+
+
+dep_ls_wofs_summary_alltime.add_link(
+    Link(
+        rel="wms",
+        target="https://ows.prod.digitalearthpacific.io/",
+        media_type="application/vnd.ogc.wms_xml",
+        title="WMS Service for this Collection",
+        extra_fields={
+            "wms:layers": ["wofs_ls_summary_alltime"],
+            "wms:styles": ["legacy_wofs_summary_alltime_frequency_masked", "wofs_summary_alltime_frequency_masked", "legacy_wofs_summary_alltime_frequency", "wofs_summary_alltime_frequency", "wofs_summary_alltime_wet", "wofs_summary_alltime_clear"],
+            "wms:dimensions": {},
+        },
+    )
 )

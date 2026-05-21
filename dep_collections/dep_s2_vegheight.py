@@ -1,4 +1,5 @@
 from pystac import (
+    Link,
     Collection,
     Extent,
     SpatialExtent,
@@ -49,4 +50,19 @@ dep_s2_vegheight = Collection(
             "platform": ["Sentinel-2A", "Sentinel-2B", "Sentinel-2C"],
         }
     ),
+)
+
+
+dep_s2_vegheight.add_link(
+    Link(
+        rel="wms",
+        target="https://ows.prod.digitalearthpacific.io/",
+        media_type="application/vnd.ogc.wms_xml",
+        title="WMS Service for this Collection",
+        extra_fields={
+            "wms:layers": ["dep_s2_vegheight"],
+            "wms:styles": ["height", "confidence"],
+            "wms:dimensions": {},
+        },
+    )
 )

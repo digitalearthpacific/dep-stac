@@ -1,4 +1,5 @@
 from pystac import (
+    Link,
     Collection,
     Extent,
     SpatialExtent,
@@ -54,4 +55,19 @@ dep_s2_ammi = Collection(
             "platform": ["Sentinel-2A", "Sentinel-2B"],
         },
     ),
+)
+
+
+dep_s2_ammi.add_link(
+    Link(
+        rel="wms",
+        target="https://ows.prod.digitalearthpacific.io/",
+        media_type="application/vnd.ogc.wms_xml",
+        title="WMS Service for this Collection",
+        extra_fields={
+            "wms:layers": ["dep_s2_ammi"],
+            "wms:styles": ["style_mangroves_percent"],
+            "wms:dimensions": {},
+        },
+    )
 )

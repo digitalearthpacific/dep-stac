@@ -31,7 +31,6 @@ PRODUCTION_COLLECTIONS = (
     dep_ls_wofs_summary_annual,
     dep_ls_wofs_summary_alltime,
     dep_ls_wofl,
-    dep_ls_geomad,
     dep_ls_fc,
     dep_ls_fc_summary_annual,
     dep_s1_geomad,
@@ -41,7 +40,6 @@ PRODUCTION_COLLECTIONS = (
     dep_s2_seagrass,
     dep_s2_sdb,
     dep_s2_vegheight,
-    dep_s2s1_mrd,
     dep_s2ls_intertidal,
     dep_ls_coastlines,
 )

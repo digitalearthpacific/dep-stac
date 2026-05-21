@@ -1,4 +1,5 @@
 from pystac import (
+    Link,
     Collection,
     Extent,
     SpatialExtent,
@@ -52,4 +53,19 @@ dep_s2ls_intertidal = Collection(
             "platform": ["Sentinel-1", "Sentinel-2", "Landsat-7", "Landsat-8", "Landsat-9"],
         },
     ),
+)
+
+
+dep_s2ls_intertidal.add_link(
+    Link(
+        rel="wms",
+        target="https://ows.prod.digitalearthpacific.io/",
+        media_type="application/vnd.ogc.wms_xml",
+        title="WMS Service for this Collection",
+        extra_fields={
+            "wms:layers": ["dep_s2ls_intertidal"],
+            "wms:styles": ["Elevation", "Exposure"],
+            "wms:dimensions": {},
+        },
+    )
 )

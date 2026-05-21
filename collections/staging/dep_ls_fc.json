@@ -11,6 +11,20 @@
       "title": "Fractional cover"
     },
     {
+      "rel": "wms",
+      "href": "https://ows.prod.digitalearthpacific.io/",
+      "type": "application/vnd.ogc.wms_xml",
+      "title": "WMS Service for this Collection",
+      "wms:layers": [
+        "dep_ls_fc"
+      ],
+      "wms:styles": [
+        "fc_rgb_unmasked",
+        "fc_rgb_masked"
+      ],
+      "wms:dimensions": {}
+    },
+    {
       "rel": "self",
       "href": "https://stac.staging.digitalearthpacific.io/collections/dep_ls_fc",
       "type": "application/json"

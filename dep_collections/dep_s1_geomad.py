@@ -1,6 +1,7 @@
 from datetime import datetime, timezone
 
 from pystac import (
+    Link,
     Collection,
     Extent,
     Provider,
@@ -114,4 +115,19 @@ dep_s1_geomad = Collection(
             "platform": ["Sentinel-1A", "Sentinel-1B"],
         },
     ),
+)
+
+
+dep_s1_geomad.add_link(
+    Link(
+        rel="wms",
+        target="https://ows.prod.digitalearthpacific.io/",
+        media_type="application/vnd.ogc.wms_xml",
+        title="WMS Service for this Collection",
+        extra_fields={
+            "wms:layers": ["dep_s1_geomad"],
+            "wms:styles": ["vv_vh_vh_over_vv", "vv", "vh", "stdev_vv", "stdev_vh", "mean_vv", "mean_vh", "count", "arcsec_smad", "log_emad", "log_bcmad"],
+            "wms:dimensions": {},
+        },
+    )
 )

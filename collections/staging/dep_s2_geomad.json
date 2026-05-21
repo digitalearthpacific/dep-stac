@@ -11,6 +11,42 @@
       "title": "Sentinel-2 GeoMAD"
     },
     {
+      "rel": "wms",
+      "href": "https://ows.prod.digitalearthpacific.io/",
+      "type": "application/vnd.ogc.wms_xml",
+      "title": "WMS Service for this Collection",
+      "wms:layers": [
+        "dep_s2_geomad"
+      ],
+      "wms:styles": [
+        "simple_rgb",
+        "infrared_green",
+        "tmad_rgb_std",
+        "tmad_rgb_sens",
+        "ndvi",
+        "ndwi",
+        "ndbi",
+        "ndmi",
+        "mndwi",
+        "ndci",
+        "blue",
+        "green",
+        "red",
+        "red_edge_1",
+        "red_edge_2",
+        "red_edge_3",
+        "nir",
+        "narrow_nir",
+        "swir_1",
+        "swir_2",
+        "arcsec_sdev",
+        "log_edev",
+        "log_bcdev",
+        "count"
+      ],
+      "wms:dimensions": {}
+    },
+    {
       "rel": "self",
       "href": "https://stac.staging.digitalearthpacific.io/collections/dep_s2_geomad",
       "type": "application/json"

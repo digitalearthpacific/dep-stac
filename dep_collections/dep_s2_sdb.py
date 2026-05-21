@@ -1,4 +1,5 @@
 from pystac import (
+    Link,
     Collection,
     Extent,
     SpatialExtent,
@@ -73,4 +74,19 @@ dep_s2_sdb = Collection(
             "platform": ["Sentinel-2A", "Sentinel-2B", "Sentinel-2C"],
         }
     ),
+)
+
+
+dep_s2_sdb.add_link(
+    Link(
+        rel="wms",
+        target="https://ows.prod.digitalearthpacific.io/",
+        media_type="application/vnd.ogc.wms_xml",
+        title="WMS Service for this Collection",
+        extra_fields={
+            "wms:layers": ["sdb"],
+            "wms:styles": ["blues_depth"],
+            "wms:dimensions": {},
+        },
+    )
 )
