@@ -12,7 +12,7 @@
     },
     {
       "rel": "wms",
-      "href": "https://ows.prod.digitalearthpacific.io/",
+      "href": "https://ows.prod.digitalearthpacific.io/wms",
       "type": "application/vnd.ogc.wms_xml",
       "title": "WMS Service for this Collection",
       "wms:layers": [

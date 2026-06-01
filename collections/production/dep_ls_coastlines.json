@@ -14,7 +14,11 @@
       "rel": "wmts",
       "href": "https://tileserver.prod.digitalearthpacific.io/styles/coastlines/wmts.xml",
       "type": "application/xml",
-      "title": "WMTS Service for this Collection"
+      "title": "WMTS Service for this Collection",
+      "wms:layers": [
+        "coastlines-256",
+        "coastlines-512"
+      ]
     },
     {
       "rel": "self",
