@@ -8,6 +8,7 @@ from pystac import (
     Summaries,
 )
 from datetime import datetime, timezone
+from dep_collections.utils import WMS_URL
 
 dep_ls_wofl_extent = Extent(
     SpatialExtent([[-180, -90, 180, 90]]),
@@ -62,7 +63,7 @@ dep_ls_wofl = Collection(
 dep_ls_wofl.add_link(
     Link(
         rel="wms",
-        target="https://ows.prod.digitalearthpacific.io/",
+        target=WMS_URL,
         media_type="application/vnd.ogc.wms_xml",
         title="WMS Service for this Collection",
         extra_fields={

@@ -61,5 +61,8 @@ dep_ls_coastlines.add_link(
         target="https://tileserver.prod.digitalearthpacific.io/styles/coastlines/wmts.xml",
         media_type="application/xml",
         title="WMTS Service for this Collection",
+        extra_fields={
+            "wms:layers": ["coastlines-256", "coastlines-512"],
+        }
     )
 )
