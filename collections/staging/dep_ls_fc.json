@@ -2,13 +2,13 @@
   "type": "Collection",
   "id": "dep_ls_fc",
   "stac_version": "1.1.0",
-  "description": "Scene-based fractional cover",
+  "description": "This dataset provides scene-based fractional land cover derived from Landsat imagery, representing the percentage of bare soil, photosynthetic vegetation, and non-photosynthetic vegetation across the Pacific region. It is generated using multi-mission Landsat data at 30 m spatial resolution to support long-term environmental monitoring. The dataset enables applications such as land cover change analysis, ecosystem monitoring, and land degradation assessment.\n\nLineage:\nDerived from Landsat surface reflectance imagery using spectral unmixing to estimate fractional cover components per scene.\n\nProcessing level:\nDerived (scene-based)\n\nDataset type:\nTime-series (scene-based)",
   "links": [
     {
       "rel": "root",
       "href": "https://stac.staging.digitalearthpacific.io/collections/dep_ls_fc",
       "type": "application/json",
-      "title": "Fractional cover"
+      "title": "Fractional Land Cover, Scene-based (Landsat, 30 m)"
     },
     {
       "rel": "wms",
@@ -30,7 +30,7 @@
       "type": "application/json"
     }
   ],
-  "title": "Fractional cover",
+  "title": "Fractional Land Cover, Scene-based (Landsat, 30 m)",
   "extent": {
     "spatial": {
       "bbox": [
@@ -53,10 +53,9 @@
   },
   "license": "CC-BY-4.0",
   "keywords": [
-    "Landsat",
-    "Vegetation",
-    "Bare ground",
-    "Pacific"
+    "fractional cover",
+    "bare soil",
+    "vegetation"
   ],
   "providers": [
     {

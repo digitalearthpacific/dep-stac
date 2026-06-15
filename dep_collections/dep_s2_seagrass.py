@@ -18,11 +18,11 @@ extent = Extent(
 # Create a Collection
 dep_s2_seagrass = Collection(
     id="dep_s2_seagrass",
-    description="Seagrass extent in the Pacific",
-    title="Seagrass extent from a random forest model",
+    description="This dataset maps the distribution of seagrass ecosystems across the Pacific region using Sentinel-2 imagery. It applies machine learning techniques to classify seagrass extent at high spatial resolution. The dataset supports marine habitat mapping, biodiversity monitoring, and coastal ecosystem management.\n\nLineage:\nDerived from Sentinel-2 imagery using machine learning models trained to classify seagrass extent.\n\nProcessing level:\nModelled\n\nDataset type:\nCategorical map",
+    title="Seagrass Extent, Machine Learning (Sentinel-2, 10 m)",
     extent=extent,
     license="CC-BY-4.0",
-    keywords=["Sentinel-2", "Seagrass", "Pacific"],
+    keywords=["seagrass", "marine habitat", "ecosystem"],
     providers=[
         Provider(
             name="Digital Earth Pacific",

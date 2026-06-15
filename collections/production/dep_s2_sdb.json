@@ -2,13 +2,13 @@
   "type": "Collection",
   "id": "dep_s2_sdb",
   "stac_version": "1.1.0",
-  "description": "Satellite-derived Bathymetry in the Pacific",
+  "description": "This dataset provides bathymetric estimates for optically shallow, clear coastal waters across the Pacific region using satellite imagery. It enables mapping of seabed depth in shallow coastal areas (typically down to depths where the seafloor remains optically visible - up to 30 m depth) where traditional survey data may be limited. The dataset supports marine spatial planning, coastal management, and environmental monitoring.\n\nLineage:\nDerived from multispectral satellite imagery using bathymetric inversion methods to estimate shallow water depth.\n\nProcessing level:\nModelled\n\nDataset type:\nModelled surface",
   "links": [
     {
       "rel": "root",
       "href": "https://stac.digitalearthpacific.org/collections/dep_s2_sdb",
       "type": "application/json",
-      "title": "Satellite-derived Bathymetry"
+      "title": "Satellite-Derived Bathymetry (Sentinel-2, 10 m)"
     },
     {
       "rel": "wms",
@@ -29,7 +29,7 @@
       "type": "application/json"
     }
   ],
-  "title": "Satellite-derived Bathymetry",
+  "title": "Satellite-Derived Bathymetry (Sentinel-2, 10 m)",
   "extent": {
     "spatial": {
       "bbox": [
@@ -52,9 +52,9 @@
   },
   "license": "CC-BY-4.0",
   "keywords": [
-    "Sentinel-2",
-    "Bathymetry",
-    "Pacific"
+    "bathymetry",
+    "shallow water",
+    "marine"
   ],
   "providers": [
     {

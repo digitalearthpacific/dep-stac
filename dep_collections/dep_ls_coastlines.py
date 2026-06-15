@@ -19,11 +19,11 @@ extent = Extent(
 # Create a Collection
 dep_ls_coastlines = Collection(
     id="dep_ls_coastlines",
-    description="Annual coastline data derived from Landsat imagery.",
-    title="Landsat Coastlines",
+    description="This dataset provides annual coastline positions across the Pacific region derived from Landsat satellite imagery. It captures long-term shoreline change by mapping coastal boundaries over time. The dataset supports coastal change analysis, erosion monitoring, and climate adaptation planning.\n\nLineage:\nDerived from Landsat imagery by extracting and compositing annual shoreline vectors.\n\nProcessing level:\nFeature Extraction\n\nDataset type:\nVector time series",
+    title="Annual Shorelines (Landsat, 30 m)",
     extent=extent,
     license="CC-BY-4.0",
-    keywords=["Landsat", "Coastlines", "Pacific"],
+    keywords=["coastline", "shoreline", "coastal change"],
     providers=[
         Provider(
             name="Digital Earth Pacific",
