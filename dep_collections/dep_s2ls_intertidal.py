@@ -18,11 +18,11 @@ extent = Extent(
 # Create a Collection
 dep_s2ls_intertidal = Collection(
     id="dep_s2ls_intertidal",
-    description="Intertidal Elevation and Exposure for the Pacific Islands",
-    title="Intertidal Elevation and Exposure",
+    description="This dataset provides spatial information on intertidal elevation and exposure across Pacific Island coastlines derived from multi-sensor satellite observations. It includes elevation estimates and exposure metrics indicating the proportion of time areas are exposed within the intertidal zone. The dataset supports coastal monitoring, habitat mapping, and shoreline dynamics analysis.\n\nLineage:\nProduced by combining Landsat and Sentinel observations to model intertidal elevation and calculate exposure metrics.\n\nProcessing level:\nModelled\n\nDataset type:\nModelled surface",
+    title="Intertidal Elevation and Exposure (Sentinel-1/Sentinel-2/Landsat, 10 m)",
     extent=extent,
     license="CC-BY-4.0",
-    keywords=["Sentinel-2", "Landsat", "Pacific"],
+    keywords=["intertidal", "elevation", "bathymetry"],
     providers=[
         Provider(
             name="Digital Earth Pacific",

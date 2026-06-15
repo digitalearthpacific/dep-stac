@@ -2,13 +2,13 @@
   "type": "Collection",
   "id": "dep_ls_coastlines",
   "stac_version": "1.1.0",
-  "description": "Annual coastline data derived from Landsat imagery.",
+  "description": "This dataset provides annual coastline positions across the Pacific region derived from Landsat satellite imagery. It captures long-term shoreline change by mapping coastal boundaries over time. The dataset supports coastal change analysis, erosion monitoring, and climate adaptation planning.\n\nLineage:\nDerived from Landsat imagery by extracting and compositing annual shoreline vectors.\n\nProcessing level:\nFeature Extraction\n\nDataset type:\nVector time series",
   "links": [
     {
       "rel": "root",
       "href": "https://stac.digitalearthpacific.org/collections/dep_ls_coastlines",
       "type": "application/json",
-      "title": "Landsat Coastlines"
+      "title": "Annual Shorelines (Landsat, 30 m)"
     },
     {
       "rel": "wmts",
@@ -26,7 +26,7 @@
       "type": "application/json"
     }
   ],
-  "title": "Landsat Coastlines",
+  "title": "Annual Shorelines (Landsat, 30 m)",
   "extent": {
     "spatial": {
       "bbox": [
@@ -49,9 +49,9 @@
   },
   "license": "CC-BY-4.0",
   "keywords": [
-    "Landsat",
-    "Coastlines",
-    "Pacific"
+    "coastline",
+    "shoreline",
+    "coastal change"
   ],
   "providers": [
     {

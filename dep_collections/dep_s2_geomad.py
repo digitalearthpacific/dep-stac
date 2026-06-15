@@ -33,11 +33,11 @@ MAD_BANDS = [("emad", "Euclidean"), ("smad", "Spectral"), ("bcmad", "Bray-Curtis
 # Create a Collection
 dep_s2_geomad = Collection(
     id="dep_s2_geomad",
-    description="Sentinel-2 Geometric Median and Absolute Deviations (GeoMAD) over the Pacific.",
-    title="Sentinel-2 GeoMAD",
+    description="This dataset provides annual cloud-free composite imagery derived from Sentinel-2 observations using geometric median and deviation methods. It represents stable surface conditions and includes variability metrics for robust environmental analysis. The dataset supports monitoring of vegetation, land cover, and coastal environments.\n\nLineage:\nGenerated from multi-temporal Sentinel-2 imagery using geometric median compositing and variability metrics.\n\nProcessing level:\nComposite\n\nDataset type:\nAnnual composite",
+    title="Annual Surface Reflectance Composite (Sentinel-2, GeoMAD, 10 m)",
     extent=dep_s2_geomad_extent,
     license="CC-BY-4.0",
-    keywords=["Sentinel-2", "GeoMAD", "Pacific"],
+    keywords=["geometric median", "composite", "satellite imagery"],
     providers=[
         Provider(
             name="Digital Earth Pacific",

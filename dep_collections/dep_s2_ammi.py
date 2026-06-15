@@ -18,11 +18,11 @@ extent = Extent(
 # Create a Collection
 dep_s2_ammi = Collection(
     id="dep_s2_ammi",
-    description="Mangroves Extent over the Pacific using the Automatic Mangrove Map and Index (AMMI) ",
-    title="Mangroves Extent (AMMI)",
+    description="This dataset provides analytical indicators describing changes and condition of mangrove ecosystems across the Pacific region. It builds on satellite-derived mangrove datasets to identify patterns of ecosystem change over time. The dataset supports environmental monitoring, resilience planning, and ecosystem accounting.\n\nLineage:\nGenerated from satellite-derived mangrove datasets using analytical workflows to detect and interpret changes.\n\nProcessing level:\nModelled\n\nDataset type:\nAnalytical product",
+    title="Mangrove Change and Condition, AMMI (Sentinel-2, 10 m)",
     extent=extent,
     license="CC-BY-4.0",
-    keywords=["Sentinel-2", "Mangroves", "GMW", "Pacific"],
+    keywords=["mangrove", "habitat", "ecosystem"],
     providers=[
         Provider(
             name="Digital Earth Pacific",

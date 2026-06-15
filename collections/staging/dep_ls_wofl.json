@@ -2,13 +2,13 @@
   "type": "Collection",
   "id": "dep_ls_wofl",
   "stac_version": "1.1.0",
-  "description": "Water observations from space (WOfS) feature layers",
+  "description": "This dataset maps the presence of surface water across the Pacific region using Landsat satellite imagery. It identifies water bodies and captures temporal variability in water extent at the observation level. The dataset supports flood mapping, drought monitoring, and water resource analysis.\n\nLineage:\nDerived from Landsat imagery using water detection algorithms to classify surface water presence per scene.\n\nProcessing level:\nDerived (scene-based)\n\nDataset type:\nTime-series (scene-based)",
   "links": [
     {
       "rel": "root",
       "href": "https://stac.staging.digitalearthpacific.io/collections/dep_ls_wofl",
       "type": "application/json",
-      "title": "WOfS feature layer"
+      "title": "Water Observations from Space (WOfS) Scene-based Surface Water (Landsat, 30 m)"
     },
     {
       "rel": "wms",
@@ -30,7 +30,7 @@
       "type": "application/json"
     }
   ],
-  "title": "WOfS feature layer",
+  "title": "Water Observations from Space (WOfS) Scene-based Surface Water (Landsat, 30 m)",
   "extent": {
     "spatial": {
       "bbox": [
@@ -53,11 +53,9 @@
   },
   "license": "CC-BY-4.0",
   "keywords": [
-    "Landsat",
-    "WOfS",
-    "WOFL",
-    "Water",
-    "Pacific"
+    "surface water",
+    "water occurrence",
+    "water frequency"
   ],
   "providers": [
     {

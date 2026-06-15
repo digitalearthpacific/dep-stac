@@ -18,11 +18,11 @@ extent = Extent(
 # Create a Collection
 dep_s2_sdb = Collection(
     id="dep_s2_sdb",
-    description="Satellite-derived Bathymetry in the Pacific",
-    title="Satellite-derived Bathymetry",
+    description="This dataset provides bathymetric estimates for optically shallow, clear coastal waters across the Pacific region using satellite imagery. It enables mapping of seabed depth in shallow coastal areas (typically down to depths where the seafloor remains optically visible - up to 30m depth) where traditional survey data may be limited. The dataset supports marine spatial planning, coastal management, and environmental monitoring.\n\nLineage:\nDerived from multispectral satellite imagery using bathymetric inversion methods to estimate shallow water depth.\n\nProcessing level:\nModelled\n\nDataset type:\nModelled surface",
+    title="Satellite-Derived Bathymetry (Sentinel-2, 10 m)",
     extent=extent,
     license="CC-BY-4.0",
-    keywords=["Sentinel-2", "Bathymetry", "Pacific"],
+    keywords=["bathymetry", "shallow water", "marine"],
     providers=[
         Provider(
             name="Digital Earth Pacific",

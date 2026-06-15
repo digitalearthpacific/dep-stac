@@ -18,11 +18,11 @@ dep_ls_wofl_extent = Extent(
 # Create a Collection
 dep_ls_wofl = Collection(
     id="dep_ls_wofl",
-    description="Water observations from space (WOfS) feature layers",
-    title="WOfS feature layer",
+    description="This dataset maps the presence of surface water across the Pacific region using Landsat satellite imagery. It identifies water bodies and captures temporal variability in water extent at the observation level. The dataset supports flood mapping, drought monitoring, and water resource analysis.\n\nLineage:\nDerived from Landsat imagery using water detection algorithms to classify surface water presence per scene.\n\nProcessing level:\nDerived (scene-based)\n\nDataset type:\nTime-series (scene-based)",
+    title="Water Observations from Space (WOfS) Scene-based Surface Water (Landsat, 30 m)",
     extent=dep_ls_wofl_extent,
     license="CC-BY-4.0",
-    keywords=["Landsat", "WOfS", "WOFL", "Water", "Pacific"],
+    keywords=["surface water", "water occurrence", "water frequency"],
     providers=[
         Provider(
             name="Digital Earth Pacific",

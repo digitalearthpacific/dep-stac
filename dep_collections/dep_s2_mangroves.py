@@ -18,11 +18,11 @@ dep_s2_mangroves_extent = Extent(
 # Create a Collection
 dep_s2_mangroves = Collection(
     id="dep_s2_mangroves",
-    description="Mangroves Extent over the Pacific.",
-    title="Mangroves Extent",
+    description="This dataset maps the spatial extent and density of mangrove ecosystems across Pacific Island countries and territories using satellite observations. It classifies mangrove areas into density categories to support ecosystem monitoring and change detection. The dataset supports applications such as coastal protection, carbon accounting, and biodiversity assessment.\n\nLineage:\nDerived from Sentinel-2 imagery and baseline mangrove data using classification methods to map mangrove extent and density.\n\nProcessing level:\nThematic Classification\n\nDataset type:\nCategorical map",
+    title="Mangrove Extent and Density (Sentinel-2, 10 m)",
     extent=dep_s2_mangroves_extent,
     license="CC-BY-4.0",
-    keywords=["Sentinel-2", "Mangroves", "GMW", "Pacific"],
+    keywords=["mangrove", "habitat", "ecosystem"],
     providers=[
         Provider(
             name="Digital Earth Pacific",
