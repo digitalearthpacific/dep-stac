@@ -18,7 +18,7 @@ extent = Extent(
 # Create a Collection
 dep_s2_vegheight = Collection(
     id="dep_s2_vegheight",
-    description="This dataset provides spatial estimates of vegetation height across the Pacific region derived from Sentinel-2 imagery. It enables quartely analysis of forest structure, biomass, and ecosystem condition. The dataset supports applications in land management, carbon monitoring, and biodiversity assessment.\n\nLineage:\nDerived from Sentinel-2 imagery using modelling approaches to estimate vegetation canopy height.\n\nProcessing level:\nModelled\n\nDataset type:\nModelled surface",
+    description="This dataset provides spatial estimates of vegetation height across the Pacific region derived from Sentinel-2 imagery. It enables quarterly analysis of forest structure, biomass, and ecosystem condition. The dataset supports applications in land management, carbon monitoring, and biodiversity assessment.\n\nLineage:\nDerived from Sentinel-2 imagery using modelling approaches to estimate vegetation canopy height.\n\nProcessing level:\nModelled\n\nDataset type:\nModelled surface",
     title="Vegetation Height, Satellite-Derived Canopy Height (Sentinel-2, 10 m)",
     extent=extent,
     license="CC-BY-4.0",
