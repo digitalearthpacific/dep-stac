@@ -2,7 +2,7 @@
   "type": "Collection",
   "id": "dep_s2_sdb",
   "stac_version": "1.1.0",
-  "description": "This dataset provides bathymetric estimates for optically shallow, clear coastal waters across the Pacific region using satellite imagery. It enables mapping of seabed depth in shallow coastal areas (typically down to depths where the seafloor remains optically visible - up to 30m depth) where traditional survey data may be limited. The dataset supports marine spatial planning, coastal management, and environmental monitoring.\n\nLineage:\nDerived from multispectral satellite imagery using bathymetric inversion methods to estimate shallow water depth.\n\nProcessing level:\nModelled\n\nDataset type:\nModelled surface",
+  "description": "This dataset provides bathymetric estimates for optically shallow, clear coastal waters across the Pacific region using satellite imagery. It enables mapping of seabed depth in shallow coastal areas (typically down to depths where the seafloor remains optically visible - up to 30 m depth) where traditional survey data may be limited. The dataset supports marine spatial planning, coastal management, and environmental monitoring.\n\nLineage:\nDerived from multispectral satellite imagery using bathymetric inversion methods to estimate shallow water depth.\n\nProcessing level:\nModelled\n\nDataset type:\nModelled surface",
   "links": [
     {
       "rel": "root",

@@ -18,7 +18,7 @@ dep_ls_fc_extent = Extent(
 # Create a Collection
 dep_ls_fc = Collection(
     id="dep_ls_fc",
-    description="This dataset provides scene-based fractional land cover derived from Landsat imagery, representing the percentage of bare soil, photosynthetic vegetation, and non-photosynthetic vegetation across the Pacific region. It is generated using multi-mission Landsat data at 30 m spatial resolution to support long-term environmental monitoring. The dataset enables applications such as land cover change analysis, ecosystem monitoring, and land degradation assessment.\n\nLineage: Derived from Landsat surface reflectance imagery using spectral unmixing to estimate fractional cover components per scene.\n\nProcessing level: Derived (scene-based)\n\nDataset type: Time-series (scene-based)",
+    description="This dataset provides scene-based fractional land cover derived from Landsat imagery, representing the percentage of bare soil, photosynthetic vegetation, and non-photosynthetic vegetation across the Pacific region. It is generated using multi-mission Landsat data at 30 m spatial resolution to support long-term environmental monitoring. The dataset enables applications such as land cover change analysis, ecosystem monitoring, and land degradation assessment.\n\nLineage:\nDerived from Landsat surface reflectance imagery using spectral unmixing to estimate fractional cover components per scene.\n\nProcessing level:\nDerived (scene-based)\n\nDataset type:\nTime-series (scene-based)",
     title="Fractional Land Cover, Scene-based (Landsat, 30 m)",
     extent=dep_ls_fc_extent,
     license="CC-BY-4.0",
