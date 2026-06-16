@@ -32,11 +32,6 @@ dep_ls_geomad = Collection(
             url="https://digitalearthpacific.org",
         ),
         Provider(
-            name="Microsoft",
-            roles=["host"],
-            url="https://microsoft.com",
-        ),
-        Provider(
             name="USGS",
             roles=["producer", "processor", "licensor"],
             url="https://www.usgs.gov/landsat-missions/landsat-collection-2-level-2-science-products",
@@ -52,7 +47,7 @@ dep_ls_geomad = Collection(
                     common_name=band,
                     description=f"Median for {band} band",
                     min=0,
-                    max=10_000,
+                    max=36_000,
                     nodata=0,
                 )
                 for band in LS_BANDS
@@ -62,7 +57,7 @@ dep_ls_geomad = Collection(
                     common_name=f"{band[1]} MAD",
                     description=f"{band[1]} median absolute deviations across all bands",
                     min=0,
-                    max=10_000,
+                    max=36_000,
                     nodata=0,
                 )
                 for band in MAD_BANDS
