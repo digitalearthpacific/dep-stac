@@ -2,18 +2,23 @@
 
 import concurrent.futures
 import json
-from typing import Generator, Iterable
+from typing import Generator, Iterable, Optional
 
-import click
 import pystac
 import s3fs
+import typer
 from pypgstac.db import PgstacDB
 from pypgstac.load import Loader, Methods
 from pystac import Item
 
+app = typer.Typer()
+
 
 def download_items(s3: s3fs.S3FileSystem, s3_files: Generator) -> Iterable[Item]:
-    def fetch_item(s3_file):
+    """  Fetches item JSONs from S3, in parallel """
+
+    def fetch_item(s3_file) -> Item:
+        """ Fetches a single item JSON from S3 and returns a pystac.Item """
         return Item.from_dict(json.loads(s3.read_text(s3_file)))
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=20) as executor:
@@ -22,9 +27,10 @@ def download_items(s3: s3fs.S3FileSystem, s3_files: Generator) -> Iterable[Item]
     return items
 
 
-def insert_items(
-    items: Iterable[Item], collection_override: str = None, dump_items: bool = False
+def upsert_items(
+    items: Iterable[Item], collection_override: str | None = None, dump_items: bool = False
 ) -> int:
+    """ Upserts (formatted) items into the database, optionally overriding the collection ID and dumping to a file. Returns the number of items upserted. """
     all_items = []
 
     for item in items:
@@ -52,25 +58,23 @@ def insert_items(
     return len(all_items)
 
 
-@click.command()
-@click.option("--bucket", help="S3 Bucket")
-@click.option("--prefix", help="Prefix", default=None)
-@click.option(
-    "--dump-items", help="Dump items to a file", type=bool, default=False, is_flag=True
-)
-@click.option(
-    "--collection-override", help="Change the collection name", type=str, default=None
-)
-def get_insert_items(
-    bucket: str, prefix: str | None, dump_items: bool, collection_override: str
+@app.command()
+def get_upsert_items(
+    bucket: str = typer.Option(..., help="S3 Bucket to search for STAC items"),
+    prefix: Optional[str] = typer.Option(None, help="Prefix to search for STAC items in the S3 bucket"),
+    dump_items: bool = typer.Option(False, "--dump-items", help="Dump items to a JSON file"),
+    collection_override: Optional[str] = typer.Option(
+        None, help="Optional override to change the collection name"
+    ),
 ):
+    """ Fetches STAC items from S3 and upserts them into the database. """
     s3 = s3fs.S3FileSystem(anon=False)
     s3_files = s3.glob(f"s3://{bucket}/{prefix}/**/*.stac-item.json")
 
     items = download_items(s3, s3_files)
-    count = insert_items(items, collection_override, dump_items=dump_items)
-    print(f"Found and updated {count} items in the database")
+    count = upsert_items(items, collection_override, dump_items=dump_items)
+    print(f"Found {count} items in the S3 bucket/prefix '{bucket}/{prefix}' and upserted them into the database")
 
 
 if __name__ == "__main__":
-    get_insert_items()
+    app()

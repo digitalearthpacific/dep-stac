@@ -1,37 +1,29 @@
-FROM ghcr.io/osgeo/gdal:ubuntu-full-3.8.5
+FROM python:3.14-slim
+
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /usr/local/bin/
 
 RUN apt-get update && apt-get install -y \
-    # Python  and build tools
-    python3-pip \
-    python3-dev \
     build-essential \
     gcc \
-    # User tools
-    git \
-    fish \
-    # Postgres libs
     postgresql-client \
     libpq-dev \
-    # Certificates for some reason
     ca-certificates \
-    # hdf5
     libhdf5-dev \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/{apt,dpkg,cache,log}
 
-RUN pip install --upgrade pip setuptools
-
-ADD . /code
 WORKDIR /code
 
-RUN pip install -r requirements.txt
+# Install deps first for better layer caching
+COPY pyproject.toml uv.lock ./
 
-# Don't use old pygeos
-ENV USE_PYGEOS=0
+RUN uv sync --frozen --no-dev
+
+COPY . .
 
 ENV APP_HOST=0.0.0.0
 ENV APP_PORT=8000
+ENV PATH="/code/.venv/bin:$PATH"
 
-# uvicorn stac_api.app:app --host ${APP_HOST} --port ${APP_PORT} --log-level info
-CMD uvicorn stac_api.app:app --host ${APP_HOST} --port ${APP_PORT} --log-level info
+CMD uv run uvicorn stac_api.app:app --host ${APP_HOST} --port ${APP_PORT} --log-level info

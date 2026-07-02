@@ -1,6 +1,7 @@
 services:
   postgis:
-    image: postgis/postgis:13-3.4
+    image: postgis/postgis:17-3.5
+    platform: linux/amd64
     restart: on-failure
     environment:
       POSTGRES_USER: username
@@ -8,8 +9,13 @@ services:
       POSTGRES_DB: postgis
     ports:
       - 5432:5432
+
   stac:
-    image: ghcr.io/stac-utils/stac-fastapi-pgstac:3.0.0
+    # Option 1: Default image:
+    # image: ghcr.io/stac-utils/stac-fastapi-pgstac:6.3.1
+    # platform: linux/amd64
+    # Option 2: Local custom build (based on Dockerfile in this repo):
+    build: .
     depends_on:
       - postgis
     environment:
@@ -29,6 +35,10 @@ services:
       PGHOST: postgis
     ports:
       - 8000:8000
+    # Turn on volumes to persist data between container restarts.
     # volumes:
     #   - .:/code
-    command: uvicorn stac_fastapi.pgstac.app:app --host 0.0.0.0 --port 8000
+    # Option 1: Default app:
+    # command: uv run uvicorn stac_fastapi.pgstac.app:app --host 0.0.0.0 --port 8000
+    # Option 2: Custom app:
+    command: uv run uvicorn stac_api.app:app --host 0.0.0.0 --port 8000 # Redundant given the CMD in Dockerfile, but explicit.
