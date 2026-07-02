@@ -15,6 +15,10 @@ migrate:
 	docker compose exec stac \
 		pypgstac migrate
 
+enable_context_counts:
+	docker compose exec postgis psql -U username -d postgis -c \
+		"SET search_path TO pgstac, public; INSERT INTO pgstac_settings (name, value) VALUES ('context', 'auto') ON CONFLICT ON CONSTRAINT pgstac_settings_pkey DO UPDATE SET value = excluded.value;"
+
 create_and_upsert_collections_staging:
 	docker compose exec stac \
 		bash -c " \

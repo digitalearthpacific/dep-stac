@@ -34,7 +34,16 @@ This is needed to structure the newly running, empty database.
 make migrate
 ```
 
-### 4. Generate and upsert staging collections
+### 4. Optionally enable counts on search/list endpoints
+
+This has performance implications.
+
+```bash
+make enable_context_counts
+```
+
+
+### 5. Generate and upsert staging collections
 
 Generates collection JSON from [/dep_collections/staging](./dep_collections/staging)
 and loads it into the database:
@@ -43,7 +52,7 @@ and loads it into the database:
 make create_and_upsert_collections_staging
 ```
 
-### 5. Check it's running
+### 6. Check it's running
 
 Don't just check [http://0.0.0.0:8000](http://0.0.0.0:8000) because this works even before doing the `pypgstac migrate`. Check this:
 
