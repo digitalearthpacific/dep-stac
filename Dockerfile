@@ -3,12 +3,9 @@ FROM python:3.14-slim
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /usr/local/bin/
 
 RUN apt-get update && apt-get install -y \
-    build-essential \
-    gcc \
     postgresql-client \
     libpq-dev \
     ca-certificates \
-    libhdf5-dev \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/{apt,dpkg,cache,log}
