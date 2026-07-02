@@ -53,6 +53,13 @@
       "url": "https://digitalearthpacific.org"
     },
     {
+      "name": "Microsoft",
+      "roles": [
+        "host"
+      ],
+      "url": "https://microsoft.com"
+    },
+    {
       "name": "USGS",
       "roles": [
         "producer",
@@ -79,7 +86,7 @@
         "common_name": "red",
         "description": "Median for red band",
         "min": 0,
-        "max": 36000,
+        "max": 10000,
         "nodata": 0
       },
       {
@@ -87,7 +94,7 @@
         "common_name": "green",
         "description": "Median for green band",
         "min": 0,
-        "max": 36000,
+        "max": 10000,
         "nodata": 0
       },
       {
@@ -95,7 +102,7 @@
         "common_name": "blue",
         "description": "Median for blue band",
         "min": 0,
-        "max": 36000,
+        "max": 10000,
         "nodata": 0
       },
       {
@@ -103,7 +110,7 @@
         "common_name": "nir08",
         "description": "Median for nir08 band",
         "min": 0,
-        "max": 36000,
+        "max": 10000,
         "nodata": 0
       },
       {
@@ -111,7 +118,7 @@
         "common_name": "swir16",
         "description": "Median for swir16 band",
         "min": 0,
-        "max": 36000,
+        "max": 10000,
         "nodata": 0
       },
       {
@@ -119,7 +126,7 @@
         "common_name": "swir22",
         "description": "Median for swir22 band",
         "min": 0,
-        "max": 36000,
+        "max": 10000,
         "nodata": 0
       },
       {
@@ -127,7 +134,7 @@
         "common_name": "Euclidean MAD",
         "description": "Euclidean median absolute deviations across all bands",
         "min": 0,
-        "max": 36000,
+        "max": 10000,
         "nodata": 0
       },
       {
@@ -135,7 +142,7 @@
         "common_name": "Spectral MAD",
         "description": "Spectral median absolute deviations across all bands",
         "min": 0,
-        "max": 36000,
+        "max": 10000,
         "nodata": 0
       },
       {
@@ -143,7 +150,7 @@
         "common_name": "Bray-curtis MAD",
         "description": "Bray-curtis median absolute deviations across all bands",
         "min": 0,
-        "max": 36000,
+        "max": 10000,
         "nodata": 0
       },
       {
