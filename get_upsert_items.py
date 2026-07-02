@@ -15,7 +15,7 @@ app = typer.Typer()
 
 
 def download_items(s3: s3fs.S3FileSystem, s3_files: Generator) -> Iterable[Item]:
-    """  Fetches item JSONs from S3, in parallel """
+    """Fetches item JSON documents from S3 in parallel"""
 
     def fetch_item(s3_file) -> Item:
         """ Fetches a single item JSON from S3 and returns a pystac.Item """
