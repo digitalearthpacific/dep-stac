@@ -74,7 +74,7 @@ pytest tests/test_collections.py -v
 docker compose down
 ```
 
-Local data doesn't persist across restarts, so steps 3–4 need to be re-run after starting again. Add a volume to the `postgis` service in `docker-compose.yaml` if you want data to persist.
+Local data doesn't persist across container deletion, so steps 3–4 need to be re-run after starting again. Add a volume to the `postgis` service in `docker-compose.yaml` if you want data to persist.
 
 
 ## Adding a new product
