@@ -24,3 +24,4 @@ ENV APP_PORT=8000
 ENV PATH="/code/.venv/bin:$PATH"
 
 CMD uv run uvicorn stac_api.app:app --host ${APP_HOST} --port ${APP_PORT} --log-level info
+# CMD ["sh", "-c", "uv run uvicorn stac_api.app:app --host ${APP_HOST} --port ${APP_PORT} --log-level info"]
