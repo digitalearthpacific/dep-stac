@@ -1,6 +1,6 @@
 [project]
 name = "dep-stac"
-version = "0.1.1"
+version = "0.2.0"
 description = "STAC API for Digital Earth Pacific"
 requires-python = ">=3.14"
 dependencies = [
