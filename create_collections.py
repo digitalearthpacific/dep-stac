@@ -75,6 +75,7 @@ def render_collections(
         "staging", help="Environment to use: staging or production"
     ),
 ):
+    """Renders the STAC collection JSON files (from Pystac Collections) for the specified environment (staging or production) and saves them to the appropriate local environment folder."""
     is_prod = env == "production"
 
     if is_prod:

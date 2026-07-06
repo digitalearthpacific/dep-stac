@@ -11,16 +11,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v6
-
-      - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
-          python-version: "3.12"
+          persist-credentials: false
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@08807647e7069bb48b6ef5acd8ec9567f424441b # v8.1.0
+        with:
+          python-version: "3.14"
 
       - name: Install dependencies
-        run: |
-          pip install pystac[validation] pytest
+        run: uv sync --frozen
 
       - name: Run STAC collection validation
-        run: pytest tests/test_collections.py -v
+        run: uv run pytest tests/test_collections.py -v
