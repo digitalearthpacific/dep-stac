@@ -1,10 +1,14 @@
 import os
+from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
-from fastapi.responses import ORJSONResponse
 from stac_fastapi.api.app import StacApi
-from stac_fastapi.api.models import create_get_request_model, create_post_request_model
-from stac_fastapi.extensions.core import (
+from stac_fastapi.api.models import (
+    JSONResponse, # type: ignore[reportPrivateImportUsage]
+    create_get_request_model,
+    create_post_request_model,
+)
+from stac_fastapi.extensions import (
     FieldsExtension,
     FilterExtension,
     QueryExtension,
@@ -14,6 +18,7 @@ from stac_fastapi.extensions.core import (
 from stac_fastapi.pgstac.config import Settings
 from stac_fastapi.pgstac.core import CoreCrudClient
 from stac_fastapi.pgstac.db import close_db_connection, connect_to_db
+from stac_fastapi.pgstac.types.search import PgstacSearch
 from starlette.middleware.cors import CORSMiddleware
 
 ENVIRONMENT = os.environ.get("ENVIRONMENT", "staging")
@@ -35,18 +40,32 @@ extensions = [
     FieldsExtension(),
     TokenPaginationExtension(),
 ]
-post_request_model = create_post_request_model(extensions)
+post_request_model = create_post_request_model(extensions, base_model=PgstacSearch)
 get_request_model = create_get_request_model(extensions)
 
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Connect to database on startup, close on shutdown."""
+    await connect_to_db(app)
+    yield
+    await close_db_connection(app)
+
+
 api = StacApi(
+    app=FastAPI(
+        title=title,
+        description=description,
+        lifespan=lifespan,
+    ),
     title=title,
     description=description,
     extensions=extensions,
     settings=settings,
-    client=CoreCrudClient(post_request_model=post_request_model, landing_page_id=id),
+    client=CoreCrudClient(pgstac_search_model=post_request_model, landing_page_id=id),
     search_get_request_model=get_request_model,
     search_post_request_model=post_request_model,
-    response_class=ORJSONResponse,
+    response_class=JSONResponse,
 )
 
 app: FastAPI = api.app
@@ -58,15 +77,3 @@ app.add_middleware(
     allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["*"],
 )
-
-
-@app.on_event("startup")
-async def startup_event():
-    """Connect to database on startup."""
-    await connect_to_db(app)
-
-
-@app.on_event("shutdown")
-async def shutdown_event():
-    """Close database connection."""
-    await close_db_connection(app)

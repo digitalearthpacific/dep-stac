@@ -1,41 +1,43 @@
 # This makefile is for populating a local DB
 
 up:
-	docker-compose up
+	docker compose up
 
 shell:
-	docker-compose exec -it stac fish
+	docker compose exec -it stac bash
 
+# This happens locally (not within Docker container). Most other commands need DB connection etc. so they are run within the container.
 create_collections:
-	python3 create_collections.py --env production
 	python3 create_collections.py --env staging
-
-init:
-	docker-compose exec stac \
-		pypgstac migrate
+	python3 create_collections.py --env production
 
 migrate:
-	docker-compose exec stac \
+	docker compose exec stac \
 		pypgstac migrate
 
-insert_collections:
-	docker-compose exec stac \
+enable_context_counts:
+	docker compose exec postgis psql -U username -d postgis -c \
+		"SET search_path TO pgstac, public; INSERT INTO pgstac_settings (name, value) VALUES ('context', 'auto') ON CONFLICT ON CONSTRAINT pgstac_settings_pkey DO UPDATE SET value = excluded.value;"
+
+create_and_upsert_collections_staging:
+	docker compose exec stac \
 		bash -c " \
-			python3 create_collections.py && \
-			cd collections && \
+			python3 create_collections.py --env staging && \
+			cd collections/staging && \
 			ls | xargs -L 1 \
 				pypgstac load collections --method upsert \
 		"
 
-insert_wofs:
-	docker-compose exec stac \
-		python3 get_insert_items.py \
-			--storage-container "output" \
+
+upsert_wofs:
+	docker compose exec stac \
+		python3 get_upsert_items.py \
+			--bucket "output" \
 			--prefix "dep_ls_wofs/0-0-3/"
 
-insert_mangroves:
-	docker-compose exec stac \
-		python3 get_insert_items.py \
-			--storage-container "output" \
+upsert_mangroves:
+	docker compose exec stac \
+		python3 get_upsert_items.py \
+			--bucket "output" \
 			--prefix "dep_s2_mangroves/0-0-5/" \
 			--collection-override "dep_s2_mangroves"

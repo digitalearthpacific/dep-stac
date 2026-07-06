@@ -11,7 +11,7 @@ import dep_collections
 
 
 def discover_collections() -> list[tuple[str, pystac.Collection]]:
-    """Discover all pystac.Collection instances in dep_collections."""
+    """Discover all pystac.Collection instances in dep_collections local folder."""
     collections = []
     for _, modname, _ in pkgutil.iter_modules(
         dep_collections.__path__, dep_collections.__name__ + "."
