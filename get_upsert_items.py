@@ -14,6 +14,10 @@ from pystac import Item
 app = typer.Typer()
 
 
+class NoItemsFoundError(Exception):
+    """Raised when a search/fetch returns no items to process."""
+
+
 def download_items(s3: s3fs.S3FileSystem, s3_files: Generator) -> Iterable[Item]:
     """Fetches item JSON documents from S3 in parallel"""
 
@@ -46,6 +50,9 @@ def upsert_items(
 
         all_items.append(item.to_dict())
 
+    if len(all_items) == 0:
+        raise NoItemsFoundError("No items found to upsert.")
+
     if dump_items:
         with open("items.json", "w") as f:
             json.dump(all_items, f, indent=2)
@@ -61,7 +68,7 @@ def upsert_items(
 @app.command()
 def get_upsert_items(
     bucket: str = typer.Option(..., help="S3 Bucket to search for STAC items"),
-    prefix: Optional[str] = typer.Option(None, help="Prefix to search for STAC items in the S3 bucket"),
+    prefix: str = typer.Option(..., help="Prefix to search for STAC items in the S3 bucket"),
     dump_items: bool = typer.Option(False, "--dump-items", help="Dump items to a JSON file"),
     collection_override: Optional[str] = typer.Option(
         None, help="Optional override to change the collection name"
@@ -69,7 +76,7 @@ def get_upsert_items(
 ):
     """ Fetches STAC items from S3 and upserts them into the database. """
     s3 = s3fs.S3FileSystem(anon=False)
-    s3_files = s3.glob(f"s3://{bucket}/{prefix}/**/*.stac-item.json")
+    s3_files = s3.glob(f"s3://{bucket}/{prefix.rstrip('/')}/**/*.stac-item.json")
 
     items = download_items(s3, s3_files)
     count = upsert_items(items, collection_override, dump_items=dump_items)
