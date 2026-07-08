@@ -117,19 +117,6 @@ Get all STAC Item JSONs from a S3 bucket/prefix, and write them to the DB. Look 
 
 You need S3 credentials to run this.
 
-```bash
-export AWS_PROFILE=XXX
-export PGHOST=localhost
-export PGPORT=5432
-export PGUSER=username
-export PGPASSWORD=password
-export PGDATABASE=postgis
-  python get_upsert_items.py \
-    --bucket=my-bucket \
-    --prefix=path/to/collection \
-    --collection-override="collection_name"
-```
-
 You should see: "Found N items in the S3 bucket/prefix 'my-bucket/path/to/collection' and upserted them into the database". You can check this here: [http://0.0.0.0:8000/collections/collection_name/items](http://0.0.0.0:8000/collections/collection_name/items)
 
 ### Deleting Items for a Collection
@@ -141,17 +128,12 @@ psql -c "SET search_path TO pgstac,public; \
 ```
 
 
-## Architecture: Dockerfile vs docker-compose
-
-This repo has two container-related files that do different jobs:
-
-- **`Dockerfile`: just the STAC API application itself.
+## Architecture:
 
 - **`docker-compose.yaml`** orchestrates *local development only*: it
-  spins up a throwaway PostGIS database alongside the API (built from the `Dockerfile` above), wires them together on a shared network, and exposes both on your machine.
+  spins up a throwaway PostGIS database alongside the pypgstac backend and stac-fastapi-pgstac API, wires them together on a shared network, and exposes both on your machine.
   
 
 ### Deployment
 
-In production, only the image built from the `Dockerfile` is deployed
-(see `.github/workflows/build-test-docker.yml`, which builds and pushes that image to `ghcr.io` on every push to `main` and on releases. The database is a separately managed service.
+In production and staging envs, the default images are built similar to what is done in the `docker-compose.yaml` (done in https://github.com/digitalearthpacific/dep-flux/).

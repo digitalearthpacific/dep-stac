@@ -11,11 +11,8 @@ services:
       - 5432:5432
 
   stac:
-    # Option 1: Default image:
-    # image: ghcr.io/stac-utils/stac-fastapi-pgstac:6.3.1
-    # platform: linux/amd64
-    # Option 2: Local custom build (based on Dockerfile in this repo):
-    build: .
+    image: ghcr.io/stac-utils/stac-fastapi-pgstac:6.3.1
+    platform: linux/amd64
     depends_on:
       - postgis
     environment:
@@ -38,7 +35,4 @@ services:
     # Turn on volumes to persist data between container deletes (`docker compose down` does delete).
     # volumes:
     #   - .:/code
-    # Option 1: Default app:
-    # command: uv run uvicorn stac_fastapi.pgstac.app:app --host 0.0.0.0 --port 8000
-    # Option 2: Custom app:
-    command: uv run uvicorn stac_api.app:app --host 0.0.0.0 --port 8000 # Redundant given the CMD in Dockerfile, but explicit.
+    command: uvicorn stac_fastapi.pgstac.app:app --host 0.0.0.0 --port 8000
