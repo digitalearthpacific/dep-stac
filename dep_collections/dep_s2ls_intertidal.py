@@ -32,7 +32,7 @@ dep_s2ls_intertidal = Collection(
     ],
     summaries=Summaries(
         {
-            "gsd": [10],
+            "gsd": [30],
             "eo:bands": [
                 {
                     "name": "elevation",
@@ -51,7 +51,7 @@ dep_s2ls_intertidal = Collection(
                     "nodata": 255,
                 },
             ],
-            "platform": ["Sentinel-1", "Sentinel-2", "Landsat-7", "Landsat-8", "Landsat-9"],
+            "platform": ["Sentinel-2", "Landsat-7", "Landsat-8", "Landsat-9"],
         },
     ),
 )
