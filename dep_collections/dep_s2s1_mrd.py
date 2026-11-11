@@ -1,4 +1,5 @@
 from pystac import (
+    Asset,
     Collection,
     Extent,
     SpatialExtent,
@@ -58,5 +59,16 @@ dep_s2s1_mrd = Collection(
             ],
             "platform": ["Sentinel-1", "Sentinel-2", "Copernicus DEM GLO-30"],
         },
+    ),
+)
+
+# All 0-0-2 items in one STAC-GeoParquet file (written by `mrd index-stac-geoparquet` in dep-ml-products).
+dep_s2s1_mrd.add_asset(
+    "geoparquet-items",
+    Asset(
+        href="https://dep-public-staging.s3.us-west-2.amazonaws.com/dep_s2s1_mrd/0-0-2/stac.parquet",
+        title="STAC items (0-0-2) as GeoParquet",
+        media_type="application/vnd.apache.parquet",
+        roles=["collection-mirror"],
     ),
 )
