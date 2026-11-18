@@ -2,7 +2,7 @@
 name = "dep-stac"
 version = "0.2.0"
 description = "STAC API for Digital Earth Pacific"
-requires-python = ">=3.14"
+requires-python = ">=3.12"
 dependencies = [
     "pypgstac[psycopg]>=0.9.11,<1",
     "pystac[validation]>=1.15.1,<2",
