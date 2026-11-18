@@ -55,13 +55,13 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      # dep-flux workflows (stac-collection-sync, stac-items-ingest) depend on these
+      # What dep-flux workflows use: stac-items-ingest, then stac-collection-sync
       - name: Smoke test
         run: |
-          IMG=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:test
-          docker run --rm $IMG pypgstac --version
-          docker run --rm $IMG python /code/get_upsert_items.py --help
-          docker run --rm $IMG sh -c 'ls /code/collections/staging/*.json /code/collections/production/*.json > /dev/null'
+          docker run --rm ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:test sh -ec '
+            python /code/get_upsert_items.py --help > /dev/null
+            pypgstac --version
+            ls /code/collections/staging/*.json /code/collections/production/*.json > /dev/null'
 
       # Everything below only runs for main and releases, not PRs
       - name: Log in to the Container registry
