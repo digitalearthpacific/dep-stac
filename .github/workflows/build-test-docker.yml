@@ -11,7 +11,7 @@ on:
       - main
   release:
     types:
-      - created
+      - published
 
 # A newer push supersedes an older one, so :latest can't end up on an older commit
 concurrency:
