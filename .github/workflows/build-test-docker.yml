@@ -13,6 +13,11 @@ on:
     types:
       - created
 
+# A newer push supersedes an older one, so :latest can't end up on an older commit
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test:
     runs-on: ubuntu-latest
