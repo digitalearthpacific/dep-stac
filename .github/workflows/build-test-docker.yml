@@ -39,7 +39,7 @@ jobs:
         with:
           python-version: "3.12" # match Dockerfile
 
-      # Collections are baked into the image, so don't publish invalid ones
+      # Validate collections before publishing
       - name: Run tests
         run: uv run --frozen pytest
 
@@ -61,7 +61,7 @@ jobs:
           docker run --rm ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:test sh -ec '
             python /code/get_upsert_items.py --help > /dev/null
             pypgstac --version
-            ls /code/collections/staging/*.json /code/collections/production/*.json > /dev/null'
+            git --version'
 
       # Everything below only runs for main and releases, not PRs
       - name: Log in to the Container registry
